@@ -1,6 +1,6 @@
 import "@baltimorecounty/dotgov-components/lib/styles/dotgov.min.css";
 import "./App.css";
-
+import PetsList from "./components/PetsList";
 import { Config } from "@baltimorecounty/javascript-utilities";
 import React from "react";
 
@@ -34,7 +34,7 @@ const configValues = {
 setConfig(configValues);
 
 function App() {
-  return "Hello World";
+  return <PetsList />;
 }
 
 export default App;
