@@ -7,12 +7,12 @@ export const PetItems = [
     animalName: "Bubbles",
     aboutMe: "I blow bubbles",
     accellaId: "ACC-12345",
-    animalId: "52",
+    animalId: "ACIMP-2019-061111",
     status: "Alive and Kicking",
     url: "",
     attributes: [
       {
-        label: "Type",
+        label: "Species",
         value: "Dog"
       },
       {
@@ -40,7 +40,7 @@ export const PetItems = [
         value: "Years"
       },
       {
-        label: "Altered",
+        label: "Spayed/Neutered",
         value: "Yes"
       },
       {
@@ -52,7 +52,7 @@ export const PetItems = [
         value: "lb"
       },
       {
-        label: "Arrival Date",
+        label: "Shelter Arrival Date",
         value: "12/25/2019"
       }
     ]
@@ -65,12 +65,12 @@ export const PetItems = [
     animalName: "Bubbles Jr",
     aboutMe: "I blow bubbles",
     accellaId: "ACC-12346",
-    animalId: "53",
+    animalId: "ACIMP-2019-061112",
     status: "Alive and Kicking",
     url: "",
     attributes: [
       {
-        label: "Type",
+        label: "Species",
         value: "Dog"
       },
       {
@@ -98,7 +98,7 @@ export const PetItems = [
         value: "Years"
       },
       {
-        label: "Altered",
+        label: "Spayed/Neutered",
         value: "Yes"
       },
       {
@@ -110,7 +110,7 @@ export const PetItems = [
         value: "lb"
       },
       {
-        label: "Arrival Date",
+        label: "Shelter Arrival Date",
         value: "12/25/2019"
       }
     ]

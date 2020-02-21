@@ -10,10 +10,11 @@ import React from "react";
 
 const PetCard = props => {
   const {
-    dateAdoptedRedeemed,
+    aboutMe,
     imageUrl,
     imageUrlAltText,
     animalName,
+    animalId,
     url,
     attributes
   } = props;
@@ -30,7 +31,11 @@ const PetCard = props => {
             />
           </div>
           <div className="col-md-8 col-xs-12 dg_pet_info">
-            <PetInfoSection attributes={attributes} />
+            <PetInfoSection attributes={attributes} animalId={animalId} />
+          </div>
+          <div>
+            <p>About Me:</p>
+            <p>{aboutMe}</p>
           </div>
         </div>
       </CardContent>
