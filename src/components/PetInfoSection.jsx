@@ -10,25 +10,20 @@ import {
 
 const PetInfoSection = props => {
   const { attributes } = props;
-  const attributesToDisplay = attributes.filter(item => {
-    return (
+  const PetAttributeRows = attributes.filter(item => 
       item.label === "Breed" ||
       item.label === "Color" ||
       item.label === "Weight" ||
       item.label === "Age" ||
       item.label === "Altered" ||
-      item.label === "Arrival Date"
-    );
-  });
-
-  const PetAttributeRows = attributesToDisplay.map(item => {
-    return (
-      <TableRow>
+      item.label === "Arrival Date" 
+  )
+  .map((item, index) => 
+      <TableRow key={index}>
         <TableHeadCell>{item.label}</TableHeadCell>
         <TableCell>{item.value}</TableCell>
       </TableRow>
-    );
-  });
+);
 
   return (
     <Table>
@@ -36,6 +31,7 @@ const PetInfoSection = props => {
     </Table>
   );
 };
+
 
 PetInfoSection.propTypes = {
   /** List of Attributes to display. */
