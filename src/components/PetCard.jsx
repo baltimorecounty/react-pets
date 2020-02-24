@@ -10,7 +10,6 @@ import React from "react";
 
 const PetCard = props => {
   const {
-    aboutMe,
     imageUrl,
     imageUrlAltText,
     animalName,
@@ -30,12 +29,8 @@ const PetCard = props => {
               thumbnailAltText={imageUrlAltText}
             />
           </div>
-          <div className="col-md-8 col-xs-12 dg_pet_info">
+          <div className="col-md-8 col-xs-12">
             <PetInfoSection attributes={attributes} animalId={animalId} />
-          </div>
-          <div>
-            <p>About Me:</p>
-            <p>{aboutMe}</p>
           </div>
         </div>
       </CardContent>

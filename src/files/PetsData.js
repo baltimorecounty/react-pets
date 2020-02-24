@@ -5,11 +5,13 @@ export const PetItems = [
     imageUrl: "https://baltimorecountymd.gov/sebin/b/d/AdoptAPetTestImage.png",
     imageUrlAltText: "Bubbles is a dog",
     animalName: "Bubbles",
-    aboutMe: "I blow bubbles",
+    aboutMe:
+      "I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles",
     accellaId: "ACC-12345",
     animalId: "ACIMP-2019-061111",
     status: "Alive and Kicking",
-    url: "",
+    url:
+      "https://beta.baltimorecountymd.gov/pets/ACIMP-2019-061111?status=adoptable",
     attributes: [
       {
         label: "Species",
@@ -39,17 +41,18 @@ export const PetItems = [
         label: "Age Unit",
         value: "Years"
       },
-      {
-        label: "Spayed/Neutered",
-        value: "Yes"
-      },
+
       {
         label: "Weight",
         value: "106.0"
       },
       {
-        label: "Weight Units",
+        label: "Weight Unit",
         value: "lb"
+      },
+      {
+        label: "Spayed/Neutered",
+        value: "Yes"
       },
       {
         label: "Shelter Arrival Date",
@@ -63,11 +66,13 @@ export const PetItems = [
     imageUrl: "https://baltimorecountymd.gov/sebin/b/d/AdoptAPetTestImage.png",
     imageUrlAltText: "Bubbles is a dog",
     animalName: "Bubbles Jr",
-    aboutMe: "I blow bubbles",
+    aboutMe:
+      "My name is Bubbles Jr. and I'm a handsome giant looking for my forever home! It sometimes take me some time to warm up to new people, but once I do I'm a big love bug! I can be a bit strong on the leash, but with some work on my leash manners I should be just fine! If you're looking for a big guy to enter your heart, come check me out today!",
     accellaId: "ACC-12346",
     animalId: "ACIMP-2019-061112",
     status: "Alive and Kicking",
-    url: "",
+    url:
+      "https://beta.baltimorecountymd.gov/pets/ACIMP-2019-061112?status=adoptable",
     attributes: [
       {
         label: "Species",
@@ -98,16 +103,16 @@ export const PetItems = [
         value: "Years"
       },
       {
-        label: "Spayed/Neutered",
-        value: "Yes"
-      },
-      {
         label: "Weight",
         value: "106.0"
       },
       {
-        label: "Weight Units",
+        label: "Weight Unit",
         value: "lb"
+      },
+      {
+        label: "Spayed/Neutered",
+        value: "Yes"
       },
       {
         label: "Shelter Arrival Date",
