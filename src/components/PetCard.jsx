@@ -30,7 +30,7 @@ const PetCard = props => {
             />
           </div>
           <div className="col-md-8 col-xs-12 dg_pet_info">
-            <PetInfoSection attributes={attributes} />
+            <PetInfoSection attributes={attributes}  />
           </div>
         </div>
       </CardContent>

@@ -10,20 +10,47 @@ import {
 
 const PetInfoSection = props => {
   const { attributes } = props;
-  const PetAttributeRows = attributes.filter(item => 
-      item.label === "Breed" ||
-      item.label === "Color" ||
-      item.label === "Weight" ||
-      item.label === "Age" ||
-      item.label === "Altered" ||
-      item.label === "Arrival Date" 
-  )
-  .map((item, index) => 
+  const PetAttributeUnits = attributes.filter(
+    item => item.label === "Age Unit" || item.label === "Weight Units"
+  );
+
+  const PetAttributeRows = attributes
+    .filter(
+      item =>
+        item.label === "Breed" ||
+        item.label === "Color" ||
+        item.label === "Weight" ||
+        item.label === "Age" ||
+        item.label === "Altered" ||
+        item.label === "Arrival Date"
+    )
+    .map((item, index) => (
       <TableRow key={index}>
         <TableHeadCell>{item.label}</TableHeadCell>
-        <TableCell>{item.value}</TableCell>
+
+        {item.label === "Age" ? (
+          <TableCell>
+            {item.value}{" "}
+            {
+              PetAttributeUnits.filter(
+                item2 => item2.label === "Age Unit"
+                )[0].value
+            }
+          </TableCell>
+        ) : item.label === "Weight" ? (
+          <TableCell>
+            {item.value}{" "}
+            {
+              PetAttributeUnits.filter(
+                item2 => item2.label === "Weight Units"
+              )[0].value
+            }
+          </TableCell>
+        ) : (
+          <TableCell>{item.value} </TableCell>
+        )}
       </TableRow>
-);
+    ));
 
   return (
     <Table>
@@ -31,7 +58,6 @@ const PetInfoSection = props => {
     </Table>
   );
 };
-
 
 PetInfoSection.propTypes = {
   /** List of Attributes to display. */
