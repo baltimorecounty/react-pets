@@ -9,7 +9,7 @@ import {
 } from "@baltimorecounty/dotgov-components";
 
 const PetInfoSection = props => {
-  const { attributes, animalId } = props;
+  const { attributes } = props;
   const PetAttributeUnits = attributes.filter(
     item => item.label === "Age Unit" || item.label === "Weight Unit"
   );
