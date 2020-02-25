@@ -7,7 +7,7 @@ const PetInfoSection = props => {
   const { attributes } = props;
 
   return (
-    <div className="dg_pet_row_headers">
+    <div>
       <Table>
         <TableBody>
           <PetAttributes attributes={attributes} />
