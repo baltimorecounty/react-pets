@@ -34,6 +34,14 @@ export const PetItems = [
         value: "Male"
       },
       {
+        label: "Weight",
+        value: "106.0"
+      },
+      {
+        label: "Weight Unit",
+        value: "lb"
+      },
+      {
         label: "Age",
         value: "5"
       },
@@ -42,14 +50,6 @@ export const PetItems = [
         value: "Years"
       },
 
-      {
-        label: "Weight",
-        value: "106.0"
-      },
-      {
-        label: "Weight Unit",
-        value: "lb"
-      },
       {
         label: "Spayed/Neutered",
         value: "Yes"
@@ -95,14 +95,6 @@ export const PetItems = [
         value: "Male"
       },
       {
-        label: "Age",
-        value: "5"
-      },
-      {
-        label: "Age Unit",
-        value: "Years"
-      },
-      {
         label: "Weight",
         value: "106.0"
       },
@@ -110,6 +102,15 @@ export const PetItems = [
         label: "Weight Unit",
         value: "lb"
       },
+      {
+        label: "Age",
+        value: "5"
+      },
+      {
+        label: "Age Unit",
+        value: "Years"
+      },
+
       {
         label: "Spayed/Neutered",
         value: "Yes"

@@ -10,49 +10,51 @@ import {
 
 const PetInfoSection = props => {
   const { attributes, animalId } = props;
+  const PetAttributeUnits = attributes.filter(
+    item => item.label === "Age Unit" || item.label === "Weight Unit"
+  );
 
   const PetAttributeRows = attributes
     .filter(
       item =>
-        item.label === "Species" ||
         item.label === "Breed" ||
         item.label === "Color" ||
-        item.label === "Sex" ||
         item.label === "Weight" ||
-        item.label === "Weight Unit" ||
         item.label === "Age" ||
-        item.label === "Age Unit" ||
         item.label === "Spayed/Neutered" ||
         item.label === "Shelter Arrival Date"
     )
-    .map((item, index) =>
-      !(item.label === "Weight Unit" || item.label === "Age Unit") ? (
-        <TableRow key={index}>
-          <TableHeadCell className="dg_pet_row_headers">
-            {item.label}
-          </TableHeadCell>
+    .map((item, index) => (
+      <TableRow key={index}>
+        <TableHeadCell>{item.label}</TableHeadCell>
 
-          {item.label === "Age" ? (
-            <TableCell>{item.value} years </TableCell>
-          ) : item.label === "Weight" ? (
-            <TableCell>{item.value} lbs</TableCell>
-          ) : (
-            <TableCell>{item.value} </TableCell>
-          )}
-        </TableRow>
-      ) : null
-    );
+        {item.label === "Age" ? (
+          <TableCell>
+            {item.value}{" "}
+            {
+              PetAttributeUnits.filter(item2 => item2.label === "Age Unit")[0]
+                .value
+            }
+          </TableCell>
+        ) : item.label === "Weight" ? (
+          <TableCell>
+            {item.value}{" "}
+            {
+              PetAttributeUnits.filter(
+                item2 => item2.label === "Weight Unit"
+              )[0].value
+            }
+          </TableCell>
+        ) : (
+          <TableCell>{item.value} </TableCell>
+        )}
+      </TableRow>
+    ));
 
   return (
     <div className="dg_pet_row_headers">
       <Table>
-        <TableBody>
-          <TableRow key={animalId}>
-            <TableHeadCell>Animal ID</TableHeadCell>
-            <TableCell>{animalId}</TableCell>
-          </TableRow>
-          {PetAttributeRows}
-        </TableBody>
+        <TableBody>{PetAttributeRows}</TableBody>
       </Table>
     </div>
   );
