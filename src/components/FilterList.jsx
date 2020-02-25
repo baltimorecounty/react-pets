@@ -6,8 +6,7 @@ const FilterList = ({
   items = [],
   renderItem = props => <As {...props} />,
   ...props
-}) => <As {...props}>
-  {items.map(renderItem)}</As>;
+}) => <As {...props}>{items.map(renderItem)}</As>;
 
 FilterList.propTypes = {
   /** render the components container as this type of thing, can be another component or a string if it's a basic html element */
