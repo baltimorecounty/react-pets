@@ -1,13 +1,13 @@
-import React from "react";
 import FilterList from "./FilterList";
 import PetCard from "./PetCard";
 import { PetItems } from "../files/PetsData";
+import React from "react";
 
 const PetsList = () => {
   return (
     <React.Fragment>
-      <div class="container">
-        <div class="row">
+      <div className="container">
+        <div className="row">
           <div className="col">
             <FilterList
               items={PetItems}
