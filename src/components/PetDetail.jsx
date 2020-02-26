@@ -1,6 +1,6 @@
 import React from "react";
 import PetThumbnail from "./PetThumbnail";
-import PetInfoSection from "./PetInfoSection";
+import PetAttributesSection from "./PetAttributesSection";
 
 const PetDetail = props => {
   const { imageUrl, imageUrlAltText, aboutMe, attributes, animalName } = props;
@@ -20,7 +20,7 @@ const PetDetail = props => {
       </div>
       <div className="row">
         <div className="col-md-8 col-xs-12">
-          <PetInfoSection attributes={attributes} />
+          <PetAttributesSection attributes={attributes} />
         </div>
       </div>
     </div>

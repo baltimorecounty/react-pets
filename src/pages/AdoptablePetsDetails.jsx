@@ -2,6 +2,7 @@ import React from "react";
 import PetDetail from "../components/PetDetail";
 import PetSidebar from "../components/PetSidebar";
 import SiteFooter from "../components/SiteFooter";
+import { PetItems } from "../files/PetsData";
 import {
   Breadcrumbs,
   BreadCrumbLinkItem,
@@ -9,71 +10,14 @@ import {
   SiteHeader
 } from "@baltimorecounty/dotgov-components";
 
-const ExamplePetDetails = {
-  id: "12345",
-  dateAdoptedRedeemed: "12/25/19",
-  imageUrl: "https://baltimorecountymd.gov/sebin/b/d/AdoptAPetTestImage.png",
-  imageUrlAltText: "Bubbles is a dog",
-  animalName: "Bubbles",
-  aboutMe:
-    "I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles",
-  accellaId: "ACC-12345",
-  animalId: "ACIMP-2019-061111",
-  status: "Alive and Kicking",
-  url:
-    "https://beta.baltimorecountymd.gov/pets/ACIMP-2019-061111?status=adoptable",
-  attributes: [
-    {
-      label: "Species",
-      value: "Dog"
-    },
-    {
-      label: "Breed",
-      value: "PIT BULL TERRIER"
-    },
-    {
-      label: "Color",
-      value: "WHITE"
-    },
-    {
-      label: "Secondary Color",
-      value: "BRINDLE"
-    },
-    {
-      label: "Sex",
-      value: "Male"
-    },
-    {
-      label: "Weight",
-      value: "106.0"
-    },
-    {
-      label: "Weight Unit",
-      value: "lb"
-    },
-    {
-      label: "Age",
-      value: "5"
-    },
-    {
-      label: "Age Unit",
-      value: "Years"
-    },
-
-    {
-      label: "Spayed/Neutered",
-      value: "Yes"
-    },
-    {
-      label: "Shelter Arrival Date",
-      value: "12/25/2019"
-    }
-  ]
-};
-
 const AdoptablePetsDetails = props => {
-  const { animalName = "Bubbles" } = props;
-  const { imageUrl, imageUrlAltText, aboutMe, attributes } = ExamplePetDetails;
+  console.log(props);
+
+  const { animalName = "Bubbles", animalId } = props.match.params;
+
+  const SelectedPet = PetItems.filter(item => item.animalId === animalId);
+
+  const { imageUrl, imageUrlAltText, aboutMe, attributes } = SelectedPet[0];
 
   const breadCrumbs = () => (
     <Breadcrumbs>
@@ -104,7 +48,7 @@ const AdoptablePetsDetails = props => {
           <div className="col-md-8 col-sm-12">
             <div id="dg_main-content">
               <PetDetail
-                data={ExamplePetDetails}
+                data={SelectedPet}
                 imageUrl={imageUrl}
                 imageUrlAltText={imageUrlAltText}
                 aboutMe={aboutMe}

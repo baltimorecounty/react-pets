@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Table, TableBody } from "@baltimorecounty/dotgov-components";
 import PetAttributes from "./PetAttributes";
 
-const PetInfoSection = props => {
+const PetAttributesSection = props => {
   const { attributes } = props;
 
   return (
@@ -17,9 +17,9 @@ const PetInfoSection = props => {
   );
 };
 
-PetInfoSection.propTypes = {
+PetAttributesSection.propTypes = {
   /** List of Attributes to display. */
   attributes: PropTypes.array.isRequired
 };
 
-export default PetInfoSection;
+export default PetAttributesSection;

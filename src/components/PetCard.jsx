@@ -4,7 +4,7 @@ import {
   CardFooter,
   Button
 } from "@baltimorecounty/dotgov-components";
-import PetInfoSection from "./PetInfoSection";
+import PetAttributesSection from "./PetAttributesSection";
 import PetThumbnail from "./PetThumbnail";
 import React from "react";
 
@@ -30,7 +30,7 @@ const PetCard = props => {
             />
           </div>
           <div className="col-md-8 col-xs-12">
-            <PetInfoSection attributes={attributes} animalId={animalId} />
+            <PetAttributesSection attributes={attributes} animalId={animalId} />
           </div>
         </div>
       </CardContent>

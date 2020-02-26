@@ -39,7 +39,7 @@ function App() {
   return (
     <React.Fragment>
       <Switch>
-        <Route path="/petDetails/:id" component={AdoptablePetsDetails} />
+        <Route path="/petDetails/:animalId" component={AdoptablePetsDetails} />
         <Route from="/" component={PetsList} />
       </Switch>
     </React.Fragment>
