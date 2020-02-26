@@ -8,10 +8,10 @@ const PetDetail = props => {
     <div class="container">
       <h2>{animalName}</h2>
       <div className="row">
-        <div className="col-md-4 col-xs-12">
+        <div className="col-lg-8 col-md-4 col-xs-12">
           <p>{aboutMe}</p>
         </div>
-        <div className="col-md-4 col-xs-12">
+        <div className="col-lg-4 col-md-4 col-xs-12">
           <PetThumbnail
             thumbnail={imageUrl}
             thumbnailAltText={imageUrlAltText}
@@ -19,7 +19,7 @@ const PetDetail = props => {
         </div>
       </div>
       <div className="row">
-        <div className="col-md-8 col-xs-12">
+        <div className="col-lg-12 col-md-8 col-xs-12">
           <PetAttributesSection attributes={attributes} />
         </div>
       </div>
