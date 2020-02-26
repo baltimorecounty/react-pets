@@ -19,15 +19,15 @@ export const PetItems = [
       },
       {
         label: "Breed",
-        value: "PIT BULL TERRIER"
+        value: "Pit Bull Terrier"
       },
       {
         label: "Color",
-        value: "WHITE"
+        value: "White"
       },
       {
         label: "Secondary Color",
-        value: "BRINDLE"
+        value: "Brindle"
       },
       {
         label: "Sex",
@@ -80,15 +80,15 @@ export const PetItems = [
       },
       {
         label: "Breed",
-        value: "PIT BULL TERRIER"
+        value: "Pit Bull Terrier"
       },
       {
         label: "Color",
-        value: "WHITE"
+        value: "White"
       },
       {
         label: "Secondary Color",
-        value: "BRINDLE"
+        value: "Brindle"
       },
       {
         label: "Sex",
