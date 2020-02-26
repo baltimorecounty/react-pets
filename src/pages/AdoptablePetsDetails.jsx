@@ -11,12 +11,8 @@ import {
 } from "@baltimorecounty/dotgov-components";
 
 const AdoptablePetsDetails = props => {
-  console.log(props);
-
   const { animalName = "Bubbles", animalId } = props.match.params;
-
   const SelectedPet = PetItems.filter(item => item.animalId === animalId);
-
   const { imageUrl, imageUrlAltText, aboutMe, attributes } = SelectedPet[0];
 
   const breadCrumbs = () => (
