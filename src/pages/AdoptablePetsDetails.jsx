@@ -2,37 +2,14 @@ import React from "react";
 import PetDetail from "../components/PetDetail";
 import PetSidebar from "../components/PetSidebar";
 import { PetItems } from "../files/PetsData";
-import {
-  Breadcrumbs,
-  BreadCrumbLinkItem,
-  PageHeader
-} from "@baltimorecounty/dotgov-components";
 
 const AdoptablePetsDetails = props => {
   const { animalName = "Bubbles", animalId } = props.match.params;
   const SelectedPet = PetItems.filter(item => item.animalId === animalId);
   const { imageUrl, imageUrlAltText, aboutMe, attributes } = SelectedPet[0];
 
-  const breadCrumbs = () => (
-    <Breadcrumbs>
-      <BreadCrumbLinkItem text="Departments" link="/departments/health" />
-      <BreadCrumbLinkItem text="Animal Services" link="/departments/health" />
-      <BreadCrumbLinkItem
-        className="breadcrumb-last"
-        text="Adoptable Pets"
-        link="/departments/health"
-      />
-      <BreadCrumbLinkItem
-        className="breadcrumb-last"
-        text={animalName}
-        link="/departments/health"
-      />
-    </Breadcrumbs>
-  );
-
   return (
     <div className="dg_internal-template">
-      <PageHeader Breadcrumbs={breadCrumbs} />
       <div className="container">
         <div className="row">
           <div className="col-md-8 col-sm-12">
