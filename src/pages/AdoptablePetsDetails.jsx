@@ -31,6 +31,7 @@ const AdoptablePetsDetails = props => {
       />
     </Breadcrumbs>
   );
+
   return (
     <div className="dg_internal-template">
       <SiteHeader
