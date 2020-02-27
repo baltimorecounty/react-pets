@@ -1,6 +1,6 @@
 import "@baltimorecounty/dotgov-components/lib/styles/dotgov.min.css";
 import "./App.css";
-import { Redirect, Route, HashRouter as Router } from "react-router-dom";
+import { Route, HashRouter as Router } from "react-router-dom";
 import PetsList from "./components/PetsList";
 import AdoptablePetsDetails from "./pages/AdoptablePetsDetails";
 import { Config } from "@baltimorecounty/javascript-utilities";

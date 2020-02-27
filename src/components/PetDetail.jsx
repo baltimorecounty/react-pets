@@ -5,7 +5,7 @@ import PetAttributesSection from "./PetAttributesSection";
 const PetDetail = props => {
   const { imageUrl, imageUrlAltText, aboutMe, attributes, animalName } = props;
   return (
-    <div class="container">
+    <div className="container">
       <h2>{animalName}</h2>
       <div className="row">
         <div className="col-lg-8 col-md-4 col-xs-12">
