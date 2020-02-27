@@ -1,13 +1,11 @@
 import React from "react";
 import PetDetail from "../components/PetDetail";
 import PetSidebar from "../components/PetSidebar";
-import SiteFooter from "../components/SiteFooter";
 import { PetItems } from "../files/PetsData";
 import {
   Breadcrumbs,
   BreadCrumbLinkItem,
-  PageHeader,
-  SiteHeader
+  PageHeader
 } from "@baltimorecounty/dotgov-components";
 
 const AdoptablePetsDetails = props => {
@@ -34,11 +32,6 @@ const AdoptablePetsDetails = props => {
 
   return (
     <div className="dg_internal-template">
-      <SiteHeader
-        heading="Baltimore County"
-        subHeading="Government"
-        status="Beta"
-      />
       <PageHeader Breadcrumbs={breadCrumbs} />
       <div className="container">
         <div className="row">
@@ -59,7 +52,6 @@ const AdoptablePetsDetails = props => {
           </div>
         </div>
       </div>
-      <SiteFooter />
     </div>
   );
 };
