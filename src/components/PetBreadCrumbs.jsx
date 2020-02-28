@@ -6,7 +6,7 @@ import {
 
 const PetBreadCrumbs = props => {
   const { animalName } = props;
-  console.log(props);
+
   return (
     <Breadcrumbs>
       <BreadCrumbLinkItem
@@ -22,11 +22,7 @@ const PetBreadCrumbs = props => {
         text="Adoptable Pets"
         link="/animalservices/adoption.html"
       />
-      <BreadCrumbLinkItem
-        className="breadcrumb-last"
-        text={animalName}
-        link="/animalservices/adoption.html"
-      />
+      <BreadCrumbLinkItem className="breadcrumb-last" text={animalName} />
     </Breadcrumbs>
   );
 };
