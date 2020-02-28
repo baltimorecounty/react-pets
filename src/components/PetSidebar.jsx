@@ -9,15 +9,28 @@ const adoptAblePetsSummaryItems = [
     id: 1,
     icon: "fas fa-map-marker-alt",
     heading: "Main Office",
-    content:
-      "<p> 111 West Chesapeake Avenue<br /> Suite 307<br /> Towson, Maryland 21204</p>"
+    content: "<p> 13800 Manor Road <br /> Baldwin, Maryland 212013</p>"
   },
 
   {
     id: 2,
     icon: "far fa-clock",
-    heading: "Hours:",
+    heading: "Office Hours:",
     content: "<p>Monday through Friday<br />8 a.m. to 4:30 p.m.</p>"
+  },
+  {
+    id: 21,
+
+    heading: "Adoption Hours:",
+    content:
+      "<p>Monday through Friday<br />Noon to 6 p.m.</p><p>Saturday and Sunday<br/> Noon to 5 p.m.</p>"
+  },
+  {
+    id: 22,
+
+    heading: "Redemption Hours:",
+    content:
+      "<p>Monday through Friday<br />8 a.m. to 6 p.m.</p><p>Saturday and Sunday<br/> 8 a.m. to 5 p.m.</p>"
   },
   {
     id: 3,
@@ -29,8 +42,7 @@ const adoptAblePetsSummaryItems = [
     id: 4,
     icon: "fas fa-mobile-alt",
     heading: "Phone:",
-    content:
-      "<p><a href=`tel:410-887-6789`>410-887-6789</a></p><p><h3>Emergency Dispatch:</h3></p><p><a href=`tel:410-887-6789`>410-887-6789</a></p>"
+    content: "<p>410-887-PAWS (phone)</p> <p>410-817-4257 (fax)</p>"
   },
   {
     id: 6,
@@ -52,7 +64,7 @@ const followUsSummaryItems = [
     icon: "dg_icon fab fa-twitter",
     heading: "Severe Weather:",
     content:
-      "<p>follow <a href=https://www.w3schools.com/>@baltcoemergency</a></p>"
+      "<p>follow <a href=https://www.w3schools.com/>@baltcoemergency</></p>"
   },
   {
     id: 3,
