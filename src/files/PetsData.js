@@ -1,6 +1,6 @@
 export const PetItems = [
   {
-    id: "12345",
+    id: "ACIMP-2019-061111",
     dateAdoptedRedeemed: "12/25/19",
     imageUrl: "https://baltimorecountymd.gov/sebin/b/d/AdoptAPetTestImage.png",
     imageUrlAltText: "Bubbles is a dog",
@@ -8,9 +8,7 @@ export const PetItems = [
     aboutMe:
       "I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles I blow bubbles",
     accellaId: "ACC-12345",
-    animalId: "ACIMP-2019-061111",
     status: "Alive and Kicking",
-    // "https://beta.baltimorecountymd.gov/pets/ACIMP-2019-061111?status=adoptable",
     attributes: [
       {
         label: "Species",
@@ -60,7 +58,7 @@ export const PetItems = [
     ]
   },
   {
-    id: "12346",
+    id: "ACIMP-2019-061112",
     dateAdoptedRedeemed: "12/25/19",
     imageUrl: "https://baltimorecountymd.gov/sebin/b/d/AdoptAPetTestImage.png",
     imageUrlAltText: "Bubbles is a dog",
@@ -68,9 +66,7 @@ export const PetItems = [
     aboutMe:
       "My name is Bubbles Jr. and I'm a handsome giant looking for my forever home! It sometimes take me some time to warm up to new people, but once I do I'm a big love bug! I can be a bit strong on the leash, but with some work on my leash manners I should be just fine! If you're looking for a big guy to enter your heart, come check me out today!",
     accellaId: "ACC-12346",
-    animalId: "ACIMP-2019-061112",
     status: "Alive and Kicking",
-    //  "https://beta.baltimorecountymd.gov/pets/ACIMP-2019-061112?status=adoptable",
     attributes: [
       {
         label: "Species",

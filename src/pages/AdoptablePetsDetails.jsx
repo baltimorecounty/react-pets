@@ -4,8 +4,8 @@ import PetSidebar from "../components/PetSidebar";
 import { PetItems } from "../files/PetsData";
 
 const AdoptablePetsDetails = props => {
-  const { animalName = "Bubbles", animalId } = props.match.params;
-  const SelectedPet = PetItems.filter(item => item.animalId === animalId);
+  const { animalName = "Bubbles", id } = props.match.params;
+  const SelectedPet = PetItems.filter(item => item.id === id);
   const { imageUrl, imageUrlAltText, aboutMe, attributes } = SelectedPet[0];
 
   return (
