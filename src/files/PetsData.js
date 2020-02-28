@@ -10,7 +10,6 @@ export const PetItems = [
     accellaId: "ACC-12345",
     animalId: "ACIMP-2019-061111",
     status: "Alive and Kicking",
-    // "https://beta.baltimorecountymd.gov/pets/ACIMP-2019-061111?status=adoptable",
     attributes: [
       {
         label: "Species",
@@ -70,7 +69,7 @@ export const PetItems = [
     accellaId: "ACC-12346",
     animalId: "ACIMP-2019-061112",
     status: "Alive and Kicking",
-    //  "https://beta.baltimorecountymd.gov/pets/ACIMP-2019-061112?status=adoptable",
+
     attributes: [
       {
         label: "Species",
