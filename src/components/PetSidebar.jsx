@@ -4,7 +4,7 @@ import {
   SummaryList
 } from "@baltimorecounty/dotgov-components";
 
-const publicWorksSummaryItems = [
+const adoptAblePetsSummaryItems = [
   {
     id: 1,
     icon: "fas fa-map-marker-alt",
@@ -23,7 +23,7 @@ const publicWorksSummaryItems = [
     id: 3,
     icon: "far fa-envelope",
     heading: "Email:",
-    content: "<p><a href=`#`>publicworks@​baltimorecountymd.gov</a></p>"
+    content: "<p><a href=`#`>rentalregistration@baltimorecountymd.gov</a></p>"
   },
   {
     id: 4,
@@ -31,12 +31,6 @@ const publicWorksSummaryItems = [
     heading: "Phone:",
     content:
       "<p><a href=`tel:410-887-6789`>410-887-6789</a></p><p><h3>Emergency Dispatch:</h3></p><p><a href=`tel:410-887-6789`>410-887-6789</a></p>"
-  },
-  {
-    id: 5,
-    icon: "fas fa-exclamation-circle",
-    heading: "BALTCOGO311",
-    content: " <p><a href=`#`>Report a problem</a> online.</p>"
   },
   {
     id: 6,
@@ -68,7 +62,7 @@ const followUsSummaryItems = [
 ];
 
 const PetSidebar = () => {
-  const sideBar = <SummaryList items={publicWorksSummaryItems} />;
+  const sideBar = <SummaryList items={adoptAblePetsSummaryItems} />;
   const followUsSideBar = <SummaryList items={followUsSummaryItems} />;
 
   return (
