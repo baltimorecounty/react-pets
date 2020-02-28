@@ -32,13 +32,6 @@ const PetsList = () => {
             onChange={handlePetFilterChange}
             items={filterItems.filter(item => item.type === "sex")}
           />
-
-          <CategoriesFilterCollapse
-            header="SIZE"
-            id="Popular-filter"
-            onChange={handlePetFilterChange}
-            items={filterItems.filter(item => item.type === "size")}
-          />
         </div>
         <div className="col-md-9 col-xs-12">
           <div className="row">
