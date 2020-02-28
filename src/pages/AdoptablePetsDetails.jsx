@@ -5,14 +5,14 @@ import { PetItems } from "../files/PetsData";
 
 const AdoptablePetsDetails = props => {
   const { id: animalId } = props.match.params;
-  const selectedPet = PetItems.filter(item => item.animalId === animalId);
+  const selectedPet = PetItems.find(item => item.animalId === animalId);
   const {
     imageUrl,
     imageUrlAltText,
     aboutMe,
     attributes,
     animalName
-  } = selectedPet[0];
+  } = selectedPet;
 
   return (
     <div className="dg_internal-template">
