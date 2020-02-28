@@ -10,10 +10,7 @@ const PetsList = () => {
     { type: "species", name: "Dog", checked: true },
     { type: "species", name: "Other", checked: true },
     { type: "sex", name: "Female", checked: true },
-    { type: "sex", name: "Male", checked: true },
-    { type: "size", name: "Small", checked: true },
-    { type: "size", name: "Medium", checked: true },
-    { type: "size", name: "Large", checked: true }
+    { type: "sex", name: "Male", checked: true }
   ]);
   const handlePetFilterChange = changeEvent => {
     console.log("filter--check");
