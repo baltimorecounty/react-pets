@@ -42,7 +42,7 @@ function App() {
         <Route exact path="/" component={PetsList} />
         <Route
           exact
-          path="/petDetails/:animalId"
+          path="/petDetails/:id"
           component={AdoptablePetsDetails}
         />
       </Router>
