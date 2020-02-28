@@ -1,7 +1,6 @@
 import React from "react";
 import PetDetail from "../components/PetDetail";
 import PetSidebar from "../components/PetSidebar";
-import PetsBreadCrumbs from "../components/PetsBreadCrumbs";
 import { PetItems } from "../files/PetsData";
 import PetBreadCrumbs from "../components/PetsBreadCrumbs";
 
