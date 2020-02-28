@@ -6,7 +6,7 @@ import {
 
 const PetBreadCrumbs = props => {
   const { animalName } = props;
-
+ console.log(props);
   return (
     <Breadcrumbs>
       <BreadCrumbLinkItem text="Departments" link="/departments/health" />

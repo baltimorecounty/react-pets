@@ -22,7 +22,7 @@ const AdoptablePetsDetails = props => {
        <div className="row">
          <div className="col">
            <div className="dg_breadcrumbs">
-             <PetBreadCrumbs/>
+             <PetBreadCrumbs animalName={animalName}/>
            </div>
          </div>
        </div>
