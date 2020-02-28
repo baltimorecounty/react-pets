@@ -4,9 +4,15 @@ import PetSidebar from "../components/PetSidebar";
 import { PetItems } from "../files/PetsData";
 
 const AdoptablePetsDetails = props => {
-  const { animalName = "Bubbles", id } = props.match.params;
-  const SelectedPet = PetItems.filter(item => item.id === id);
-  const { imageUrl, imageUrlAltText, aboutMe, attributes } = SelectedPet[0];
+  const { id: animalId } = props.match.params;
+  const selectedPet = PetItems.find(item => item.animalId === animalId);
+  const {
+    imageUrl,
+    imageUrlAltText,
+    aboutMe,
+    attributes,
+    animalName
+  } = selectedPet;
 
   return (
     <div className="dg_internal-template">
@@ -15,7 +21,6 @@ const AdoptablePetsDetails = props => {
           <div className="col-md-8 col-sm-12">
             <div id="dg_main-content">
               <PetDetail
-                data={SelectedPet}
                 imageUrl={imageUrl}
                 imageUrlAltText={imageUrlAltText}
                 aboutMe={aboutMe}
