@@ -17,7 +17,7 @@ const PetAttributesSection = props => {
       <Table>
         <TableBody>
           <TableRow key={id}>
-            <TableHeadCell>Animal ID:</TableHeadCell>
+            <TableHeadCell>Animal ID</TableHeadCell>
             <TableCell>{id}</TableCell>
           </TableRow>
           <PetAttributes attributes={attributes} />
