@@ -3,7 +3,14 @@ import PetThumbnail from "./PetThumbnail";
 import PetAttributesSection from "./PetAttributesSection";
 
 const PetDetail = props => {
-  const { imageUrl, imageUrlAltText, aboutMe, attributes, animalName } = props;
+  const {
+    imageUrl,
+    imageUrlAltText,
+    aboutMe,
+    attributes,
+    animalName,
+    id
+  } = props;
   return (
     <div className="container">
       <h2>{animalName}</h2>
@@ -20,7 +27,7 @@ const PetDetail = props => {
       </div>
       <div className="row">
         <div className="col-lg-12 col-md-8 col-xs-12">
-          <PetAttributesSection attributes={attributes} />
+          <PetAttributesSection attributes={attributes} id={id} />
         </div>
       </div>
     </div>
