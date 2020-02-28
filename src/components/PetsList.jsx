@@ -51,7 +51,6 @@ const PetsList = () => {
                 renderItem={props => <PetCard key={props.id} {...props} />}
               />
             </div>
-            )} />
           </div>
         </div>
       </div>
