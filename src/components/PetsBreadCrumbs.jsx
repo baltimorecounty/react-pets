@@ -14,7 +14,7 @@ const PetBreadCrumbs = props => {
       <BreadCrumbLinkItem
         className="breadcrumb-last"
         text="Adoptable Pets"
-        link="/departments/health"
+        link="/animalservices/adoption.html"
       />
       <BreadCrumbLinkItem
         className="breadcrumb-last"
