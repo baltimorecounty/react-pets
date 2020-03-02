@@ -4,19 +4,13 @@ import {
   CardFooter,
   Button
 } from "@baltimorecounty/dotgov-components";
-import PetInfoSection from "./PetInfoSection";
+import PetAttributeRows from "./PetAttributeRows";
+import { Link } from "react-router-dom";
 import PetThumbnail from "./PetThumbnail";
 import React from "react";
 
 const PetCard = props => {
-  const {
-    imageUrl,
-    imageUrlAltText,
-    animalName,
-    animalId,
-    url,
-    attributes
-  } = props;
+  const { imageUrl, imageUrlAltText, animalName, id, attributes } = props;
 
   return (
     <Card className="text-left">
@@ -30,12 +24,14 @@ const PetCard = props => {
             />
           </div>
           <div className="col-md-8 col-xs-12">
-            <PetInfoSection attributes={attributes} animalId={animalId} />
+            <PetAttributeRows attributes={attributes} id={id} />
           </div>
         </div>
       </CardContent>
       <CardFooter className="text-right">
-        <Button as="a" text="Details" href={url} />
+        <Link to={`/petDetails/${id}`}>
+          <Button as="a" text="Details" />
+        </Link>
       </CardFooter>
     </Card>
   );
