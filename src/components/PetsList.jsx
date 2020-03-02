@@ -18,69 +18,33 @@ const PetsList = () => {
   ]);
 
   const filterServiceList = itemUpdated => {
-    let finalItems = [];
-    const uncheckedItem = itemUpdated.filter(item => item.checked === false);
+    let finalItems=[] ;
+    const checkedspeciesType = itemUpdated.filter(item => item.checked === true  && item.type==="species");
+    const checkedSexType = itemUpdated.filter(item => item.checked === true && item.type==="sex");
     setIsFiltering(true);
     let items = [...petsItems];
-    // items = items.filter(
-    //   item => item.label.toLocaleLowerCase() === "species"
-    // );
-    //console.log(uncheckedItem);
-    // const test =  items.filter(
-    //   i => i.attributes.value
-    // )
-    // console.log(test);
+
     let attributes =items.filter(i =>i.attributes);
-    console.log(attributes);
-    let filterAttributes = attributes.filter(j => j.id ==="ACIMP-2019-061111");
-    filterAttributes= filterAttributes.find(element =>element.value ==="Other");
-    
-    console.log(filterAttributes);
+ 
     for (var i  in attributes){
       var test =attributes[i].attributes;
-    //  console.log(test);
-      let filterAttributes = test.filter(j => j.id ==="ACIMP-2019-061111");
-     // console.log(filterAttributes);
-     // console.log(attributes[i]);
+       for (var j in checkedspeciesType){
+        let type = checkedspeciesType[j].type.toLocaleLowerCase();
+        let name = checkedspeciesType[j].name.toLocaleLowerCase();
+        if (test.find(x=> x.label.toLocaleLowerCase() ===`${type}` && x.value.toLocaleLowerCase() === `${name}` )){
+          for (var k in checkedSexType){
+           let sexType = checkedSexType[k].type.toLocaleLowerCase();
+            let genderName = checkedSexType[k].name.toLocaleLowerCase();
+             if (test.find(x=> x.label.toLocaleLowerCase() ===`${sexType}` && x.value.toLocaleLowerCase() === `${genderName}` )){
+            finalItems.push(  attributes[i]);
+             }
+          }
+         
+        }
+       }
+       setFilteredItems(finalItems);
     }
-  
-   // for (var key in uncheckedItem) {
-  //    var items2;
-   //   const { name } = uncheckedItem[key];
-  // //    console.log(name);
-   //   for (var key2 in items) {
-    //    const { attributes } = items[key2];
-        // console.log(items[key2].attributes);
-        //  finalItems.push.apply(
-        //   finalItems, items.filter(
-        //   i => i[key2].toLocaleLowerCase() === name.toLocaleLowerCase()
-        //   )
-        // );
-      // console.log(finalItems);
-     // }
-      //  console.log(petList);
-      //for (var key3 in petList){
-      //   const { PetAttributes } = petList[key3];
-      //console.log(PetAttributes);
-      // }
-      // items2 = items.filter(
-      //   i =>
-      //     i.attributes.toLocaleLowerCase() ===
-      //     name.toLocaleLowerCase()
-      // );
-      //  console.log(items2);
-      // }
-      // finalItems.push.apply(
-      //   finalItems,
-      //   items2.filter(
-      //     i =>
-      //       i.attributes[key2].value.toLocaleLowerCase() ===
-      //       name.toLocaleLowerCase()
-      //   )
-      // );
- //   }
-  //  setFilteredItems(finalItems);
-    // console.log(finalItems);
+
   };
 
   const handlePetFilterChange = changeEvent => {
@@ -91,14 +55,13 @@ const PetsList = () => {
         return { ...item, checked: checked };
       return item;
     });
-    //  console.log(itemUpdated);
     setFilterItems(itemUpdated);
     const checkedCount = itemUpdated.filter(item => item.checked).length;
     const isTrue =
       checkedCount === 0 || checkedCount === itemUpdated.length ? false : true;
     isTrue ? filterServiceList(itemUpdated) : setFilteredItems([]);
   };
-  //console.log(filteredItems);
+
   const hasFilteredResults = !(isFiltering && filteredItems.length === 0);
   return (
     <React.Fragment>
