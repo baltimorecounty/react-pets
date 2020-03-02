@@ -13,17 +13,15 @@ const PetAttributesSection = props => {
   const { attributes, id } = props;
 
   return (
-    <div>
-      <Table>
+    <Table>
         <TableBody>
-          <TableRow key={id}>
-            <TableHeadCell>Animal ID</TableHeadCell>
-            <TableCell>{id}</TableCell>
-          </TableRow>
-          <PetAttributes attributes={attributes} />
+            <TableRow key={id}>
+                <TableHeadCell>Animal ID</TableHeadCell>
+                <TableCell>{id}</TableCell>
+            </TableRow>
+            <PetAttributes attributes={attributes} />
         </TableBody>
-      </Table>
-    </div>
+    </Table>
   );
 };
 
