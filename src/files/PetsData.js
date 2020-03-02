@@ -123,8 +123,7 @@ export const PetItems = [
 
     imageUrlAltText: "Sniffles is a cat",
     animalName: "Mittens",
-    aboutMe:
-      "My name is Bubbles Jr. and I'm a handsome giant looking for my forever home! It sometimes take me some time to warm up to new people, but once I do I'm a big love bug! I can be a bit strong on the leash, but with some work on my leash manners I should be just fine! If you're looking for a big guy to enter your heart, come check me out today!",
+    aboutMe: "My name is Mittens and I'm a sad cat meme!",
     accellaId: "ACC-12346",
     status: "Alive and Kicking",
     attributes: [
@@ -183,7 +182,7 @@ export const PetItems = [
     imageUrlAltText: "Sniffles is a cat",
     animalName: "Mittens Jr",
     aboutMe:
-      "My name is Bubbles Jr. and I'm a handsome giant looking for my forever home! It sometimes take me some time to warm up to new people, but once I do I'm a big love bug! I can be a bit strong on the leash, but with some work on my leash manners I should be just fine! If you're looking for a big guy to enter your heart, come check me out today!",
+      "My name is Mittens Jr. and I'm a very polite lad. Im also a meme.",
     accellaId: "ACC-12346",
     status: "Alive and Kicking",
     attributes: [
@@ -239,10 +238,9 @@ export const PetItems = [
     dateAdoptedRedeemed: "12/25/19",
     imageUrl:
       "https://baltimorecountymd.gov/sebin/r/n/AdoptAPetCat3TestImage.jpg",
-    imageUrlAltText: "SnowSucks is a cat",
+    imageUrlAltText: "Snowy is a cat",
     animalName: "Snowy",
-    aboutMe:
-      "My name is Bubbles Jr. and I'm a handsome giant looking for my forever home! It sometimes take me some time to warm up to new people, but once I do I'm a big love bug! I can be a bit strong on the leash, but with some work on my leash manners I should be just fine! If you're looking for a big guy to enter your heart, come check me out today!",
+    aboutMe: "My name is Snowy and I love snow, cant you tell?",
     accellaId: "ACC-12346",
     status: "Alive and Kicking",
     attributes: [
