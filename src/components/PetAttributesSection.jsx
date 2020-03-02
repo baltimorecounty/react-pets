@@ -1,26 +1,27 @@
-import React from "react";
-import PropTypes from "prop-types";
 import {
   Table,
   TableBody,
-  TableRow,
   TableCell,
-  TableHeadCell
+  TableHeadCell,
+  TableRow
 } from "@baltimorecounty/dotgov-components";
+
 import PetAttributes from "./PetAttributes";
+import PropTypes from "prop-types";
+import React from "react";
 
 const PetAttributesSection = props => {
   const { attributes, id } = props;
 
   return (
     <Table>
-        <TableBody>
-            <TableRow key={id}>
-                <TableHeadCell>Animal ID</TableHeadCell>
-                <TableCell>{id}</TableCell>
-            </TableRow>
-            <PetAttributes attributes={attributes} />
-        </TableBody>
+      <TableBody>
+        <TableRow key={id}>
+          <TableHeadCell>Animal ID</TableHeadCell>
+          <TableCell>{id}</TableCell>
+        </TableRow>
+        <PetAttributes attributes={attributes} />
+      </TableBody>
     </Table>
   );
 };
