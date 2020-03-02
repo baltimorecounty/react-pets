@@ -4,7 +4,7 @@ import {
   CardFooter,
   Button
 } from "@baltimorecounty/dotgov-components";
-import PetAttributesSection from "./PetAttributesSection";
+import PetAttributeRows from "./PetAttributeRows";
 import { Link } from "react-router-dom";
 import PetThumbnail from "./PetThumbnail";
 import React from "react";
@@ -24,7 +24,7 @@ const PetCard = props => {
             />
           </div>
           <div className="col-md-8 col-xs-12">
-            <PetAttributesSection attributes={attributes} id={id} />
+            <PetAttributeRows attributes={attributes} id={id} />
           </div>
         </div>
       </CardContent>

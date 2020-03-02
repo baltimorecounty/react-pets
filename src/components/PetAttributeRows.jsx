@@ -10,7 +10,7 @@ import PetAttributes from "./PetAttributes";
 import PropTypes from "prop-types";
 import React from "react";
 
-const PetAttributesSection = props => {
+const PetAttributeRows = props => {
   const { attributes, id } = props;
 
   return (
@@ -26,9 +26,9 @@ const PetAttributesSection = props => {
   );
 };
 
-PetAttributesSection.propTypes = {
+PetAttributeRows.propTypes = {
   /** List of Attributes to display. */
   attributes: PropTypes.array.isRequired
 };
 
-export default PetAttributesSection;
+export default PetAttributeRows;
