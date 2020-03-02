@@ -56,20 +56,9 @@ const followUsSummaryItems = [
   {
     id: 1,
     icon: "dg_icon fab fa-facebook-square",
-    heading: "Clean Green Baltimore County"
-  },
-
-  {
-    id: 2,
-    icon: "dg_icon fab fa-twitter",
-    heading: "Severe Weather:",
+    heading: "Animal Services",
     content:
-      "<p>follow <a href=https://www.w3schools.com/>@baltcoemergency</></p>"
-  },
-  {
-    id: 3,
-    icon: "dg_icon fab fa-youtube",
-    heading: "Youtube"
+      "<p>follow <a href=https://www.facebook.com/BaltCoAnimalServices/</>@BaltCoAnimalServices</p>"
   }
 ];
 
