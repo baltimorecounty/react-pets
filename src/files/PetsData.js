@@ -134,7 +134,7 @@ export const PetItems = [
       },
       {
         label: "Breed",
-        value: "Pit Bull Terrier"
+        value: "Persian Cat"
       },
       {
         label: "Color",
@@ -193,7 +193,7 @@ export const PetItems = [
       },
       {
         label: "Breed",
-        value: "Pit Bull Terrier"
+        value: "Bengal Cat"
       },
       {
         label: "Color",
@@ -249,11 +249,11 @@ export const PetItems = [
     attributes: [
       {
         label: "Species",
-        value: "Other"
+        value: "Cat"
       },
       {
         label: "Breed",
-        value: "Pit Bull Terrier"
+        value: "Maine Coon"
       },
       {
         label: "Color",
@@ -295,7 +295,7 @@ export const PetItems = [
     ]
   },
   {
-    id: "ACIMP-2019-061167",
+    id: "ACIMP-2019-06116",
     dateAdoptedRedeemed: "12/25/19",
     imageUrl:
       "https://baltimorecountymd.gov/sebin/h/g/AdoptAPetTestBunnyImage.jpeg",
@@ -312,7 +312,7 @@ export const PetItems = [
       },
       {
         label: "Breed",
-        value: "Pit Bull Terrier"
+        value: "Holland Lop"
       },
       {
         label: "Color",
@@ -371,7 +371,7 @@ export const PetItems = [
       },
       {
         label: "Breed",
-        value: "Pit Bull Terrier"
+        value: "Skinny pig"
       },
       {
         label: "Color",
