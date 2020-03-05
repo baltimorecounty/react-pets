@@ -12,7 +12,7 @@ const PetsList = () => {
     { type: "species", name: "Dog", checked: true },
     { type: "species", name: "Other", checked: true }
   ]);
-//TODO: These codes are only for april demo purpose only, once we have our service these code will be removed.
+  //TODO: These codes are only for april demo purpose only, once we have our service these code will be removed.
   const filterServiceList = itemUpdated => {
     let finalItems = [];
     const checkedspeciesType = itemUpdated.filter(
@@ -80,7 +80,7 @@ const PetsList = () => {
               />
             </div>
           ) : (
-            "Sorry, no news matches your search criteria. Please change your search term and try again"
+            "Sorry, no pets match your search criteria. Please change your search term and try again"
           )}
         </div>
       </div>
