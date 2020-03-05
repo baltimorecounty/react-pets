@@ -21,12 +21,12 @@ const PetsList = () => {
     const checkedspeciesType = itemUpdated.filter(
       item => item.checked === true && item.type === "species"
     );
-    // const checkedSexType = itemUpdated.filter(item => item.checked === true && item.type==="sex");
+    console.log(JSON.stringify(checkedspeciesType));
     setIsFiltering(true);
     let items = [...petsItems];
 
     let attributes = items.filter(i => i.attributes);
-    console.log(JSON.stringify(attributes));
+    // console.log(JSON.stringify(attributes));
     for (var i in attributes) {
       var attributesItems = attributes[i].attributes;
       //  console.log(JSON.stringify(test));
@@ -40,11 +40,13 @@ const PetsList = () => {
               x.value.toLocaleLowerCase() === `${name}`
           )
         ) {
+          console.log("add to finalitems");
           finalItems.push(attributes[i]);
         }
       }
+     // console.log(JSON.stringify(finalItems));
+      setFilteredItems(finalItems);
     }
-    setFilteredItems(finalItems);
   };
 
   const handlePetFilterChange = changeEvent => {
@@ -62,6 +64,8 @@ const PetsList = () => {
     isTrue ? filterServiceList(itemUpdated) : setFilteredItems([]);
   };
   const hasFilteredResults = !(isFiltering && filteredItems.length === 0);
+  console.log(filteredItems.length );
+  console.log(JSON.stringify(filteredItems) );
   return (
     <React.Fragment>
       <div className="row">
