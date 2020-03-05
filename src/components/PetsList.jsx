@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import CategoriesFilterCollapse from "./CategoriesFilterCollapse";
 
 const PetsList = () => {
-  const [filteredItems, setFilteredItems] = useState([]);
+  const [filteredPets, setFilteredPets] = useState([]);
   const [isFiltering, setIsFiltering] = useState(false);
   const [filterItems, setFilterItems] = useState([
     { type: "species", name: "Cat", checked: false },
@@ -36,7 +36,7 @@ const PetsList = () => {
           finalItems.push(items[i]);
         }
       }
-      setFilteredItems(finalItems);
+      setFilteredPets(finalItems);
     }
   };
 
@@ -44,17 +44,15 @@ const PetsList = () => {
     setIsFiltering(false);
     const { checked, name } = changeEvent.target;
     const itemUpdated = filterItems.map(item => {
-      if (item.name.toLocaleLowerCase() === name.toLocaleLowerCase())
-        return { ...item, checked: checked };
-      return item;
+     return item.name.toLocaleLowerCase() === name.toLocaleLowerCase()? { ...item, checked: checked }: item;
     });
     setFilterItems(itemUpdated);
     const checkedCount = itemUpdated.filter(item => item.checked).length;
     const isTrue =
       checkedCount === 0 || checkedCount === itemUpdated.length ? false : true;
-    isTrue ? filterServiceList(itemUpdated) : setFilteredItems([]);
+    isTrue ? filterServiceList(itemUpdated) : setFilteredPets([]);
   };
-  const hasFilteredResults = !(isFiltering && filteredItems.length === 0);
+  const hasFilteredResults = !(isFiltering && filteredPets.length === 0);
 
   return (
     <React.Fragment>
@@ -71,7 +69,7 @@ const PetsList = () => {
           {hasFilteredResults ? (
             <div className="col">
               <FilterList
-                items={filteredItems.length > 0 ? filteredItems : PetItems}
+                items={filteredPets.length > 0 ? filteredPets : PetItems}
                 renderItem={props => (
                   <div key={props.id}>
                     <PetCard {...props} />
