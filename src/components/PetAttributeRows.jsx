@@ -14,7 +14,7 @@ const PetAttributeRows = props => {
   const { attributes, id } = props;
 
   return (
-    <Table>
+    <Table className="table-fixed">
       <TableBody>
         <TableRow key={id}>
           <TableHeadCell>Animal ID</TableHeadCell>
