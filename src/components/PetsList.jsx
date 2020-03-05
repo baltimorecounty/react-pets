@@ -3,10 +3,10 @@ import FilterList from "./FilterList";
 import PetCard from "./PetCard";
 import { PetItems } from "../files/PetsData";
 import CategoriesFilterCollapse from "./CategoriesFilterCollapse";
-import PetAttributes from "./PetAttributes";
+
 
 const PetsList = () => {
-  const petsItems = ([] = PetItems);
+  const petsItems = PetItems;
   const [filteredItems, setFilteredItems] = useState([]);
   const [isFiltering, setIsFiltering] = useState(false);
   const [filterItems, setFilterItems] = useState([
