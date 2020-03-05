@@ -20,12 +20,12 @@ const PetsList = () => {
     );
     setIsFiltering(true);
     let items = [...PetItems];
-
+  
     for (const item of items) {
       var attributesItems = item.attributes;
-      for (var j in activeFilteredSpeciesTypes) {
-        let type = activeFilteredSpeciesTypes[j].type.toLocaleLowerCase();
-        let name = activeFilteredSpeciesTypes[j].name.toLocaleLowerCase();
+      for (const filterItems of  activeFilteredSpeciesTypes) {
+        let type = filterItems.type.toLocaleLowerCase();
+        let name = filterItems.name.toLocaleLowerCase();
         if (
           attributesItems.find(
             x =>
