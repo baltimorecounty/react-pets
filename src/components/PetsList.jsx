@@ -21,8 +21,8 @@ const PetsList = () => {
     setIsFiltering(true);
     let items = [...PetItems];
 
-    for (var i in items) {
-      var attributesItems = items[i].attributes;
+    for (const item of items) {
+      var attributesItems = item.attributes;
       for (var j in activeFilteredSpeciesTypes) {
         let type = activeFilteredSpeciesTypes[j].type.toLocaleLowerCase();
         let name = activeFilteredSpeciesTypes[j].name.toLocaleLowerCase();
@@ -33,7 +33,7 @@ const PetsList = () => {
               x.value.toLocaleLowerCase() === `${name}`
           )
         ) {
-          finalItems.push(items[i]);
+          finalItems.push(item);
         }
       }
       setFilteredPets(finalItems);
