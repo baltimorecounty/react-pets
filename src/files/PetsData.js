@@ -116,7 +116,7 @@ export const PetItems = [
     ]
   },
   {
-    id: "ACIMP-2019-061115",
+    id: "ACIMP-2019-061113",
     dateAdoptedRedeemed: "12/25/19",
     imageUrl:
       "https://baltimorecountymd.gov/sebin/x/a/AdoptAPetCatTestImage.jpg",
@@ -235,7 +235,7 @@ export const PetItems = [
     ]
   },
   {
-    id: "ACIMP-2019-061113",
+    id: "ACIMP-2019-061115",
     dateAdoptedRedeemed: "12/25/19",
     imageUrl:
       "https://baltimorecountymd.gov/sebin/r/n/AdoptAPetCat3TestImage.jpg",
