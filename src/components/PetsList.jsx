@@ -16,22 +16,17 @@ const PetsList = () => {
   const filterServiceList = itemUpdated => {
     let finalItems = [];
     const activeFilteredSpeciesTypes = itemUpdated.filter(
-      item => item.checked === true && item.type === "species"
+      item => item.checked === true
     );
     setIsFiltering(true);
     let items = [...PetItems];
-  
+
     for (const item of items) {
       var attributesItems = item.attributes;
-      for (const filterItems of  activeFilteredSpeciesTypes) {
-        let type = filterItems.type.toLocaleLowerCase();
+      for (const filterItems of activeFilteredSpeciesTypes) {
         let name = filterItems.name.toLocaleLowerCase();
         if (
-          attributesItems.find(
-            x =>
-              x.label.toLocaleLowerCase() === `${type}` &&
-              x.value.toLocaleLowerCase() === `${name}`
-          )
+          attributesItems.find(x => x.value.toLocaleLowerCase() === `${name}`)
         ) {
           finalItems.push(item);
         }
@@ -44,7 +39,9 @@ const PetsList = () => {
     setIsFiltering(false);
     const { checked, name } = changeEvent.target;
     const itemUpdated = filterItems.map(item => {
-     return item.name.toLocaleLowerCase() === name.toLocaleLowerCase()? { ...item, checked: checked }: item;
+      return item.name.toLocaleLowerCase() === name.toLocaleLowerCase()
+        ? { ...item, checked: checked }
+        : item;
     });
     setFilterItems(itemUpdated);
     const checkedCount = itemUpdated.filter(item => item.checked).length;
@@ -78,7 +75,11 @@ const PetsList = () => {
               />
             </div>
           ) : (
-           <p> "Sorry, no pets match your filter criteria. Please change your filter and try again" </p>
+            <p>
+              {" "}
+              "Sorry, no pets match your filter criteria. Please change your
+              filter and try again"{" "}
+            </p>
           )}
         </div>
       </div>
