@@ -8,24 +8,24 @@ const PetsList = () => {
   const [filteredItems, setFilteredItems] = useState([]);
   const [isFiltering, setIsFiltering] = useState(false);
   const [filterItems, setFilterItems] = useState([
-    { type: "species", name: "Cat", checked: true },
-    { type: "species", name: "Dog", checked: true },
-    { type: "species", name: "Other", checked: true }
+    { type: "species", name: "Cat", checked: false },
+    { type: "species", name: "Dog", checked: false },
+    { type: "species", name: "Other", checked: false }
   ]);
   //TODO: These codes are only for april demo purpose only, once we have our service these code will be removed.
   const filterServiceList = itemUpdated => {
     let finalItems = [];
-    const checkedspeciesType = itemUpdated.filter(
+    const activeFilteredSpeciesTypes = itemUpdated.filter(
       item => item.checked === true && item.type === "species"
     );
     setIsFiltering(true);
     let items = [...PetItems];
-    let attributes = items.filter(i => i.attributes);
-    for (var i in attributes) {
-      var attributesItems = attributes[i].attributes;
-      for (var j in checkedspeciesType) {
-        let type = checkedspeciesType[j].type.toLocaleLowerCase();
-        let name = checkedspeciesType[j].name.toLocaleLowerCase();
+
+    for (var i in items) {
+      var attributesItems = items[i].attributes;
+      for (var j in activeFilteredSpeciesTypes) {
+        let type = activeFilteredSpeciesTypes[j].type.toLocaleLowerCase();
+        let name = activeFilteredSpeciesTypes[j].name.toLocaleLowerCase();
         if (
           attributesItems.find(
             x =>
@@ -33,7 +33,7 @@ const PetsList = () => {
               x.value.toLocaleLowerCase() === `${name}`
           )
         ) {
-          finalItems.push(attributes[i]);
+          finalItems.push(items[i]);
         }
       }
       setFilteredItems(finalItems);
@@ -80,7 +80,7 @@ const PetsList = () => {
               />
             </div>
           ) : (
-            "Sorry, no pets match your search criteria. Please change your search term and try again"
+           <p> "Sorry, no pets match your filter criteria. Please change your filter and try again" </p>
           )}
         </div>
       </div>

@@ -238,7 +238,6 @@ export const PetItems = [
     id: "ACIMP-2019-061115",
     dateAdoptedRedeemed: "12/25/19",
     imageUrl:
-      //"https://baltimorecountymd.gov/sebin/b/z/AdoptAPetTestGuineaImage.jpg",
       "https://baltimorecountymd.gov/sebin/r/n/AdoptAPetCat3TestImage.jpg",
     imageUrlAltText: "SnowSucks is a cat",
     animalName: "Snowy",
@@ -298,7 +297,7 @@ export const PetItems = [
     id: "ACIMP-2019-06116",
     dateAdoptedRedeemed: "12/25/19",
     imageUrl:
-      "https://baltimorecountymd.gov/sebin/h/g/AdoptAPetTestBunnyImage.jpeg",
+      "https://baltimorecountymd.gov/sebin/h/g/AdoptAPetTestBunnyImage.jpg",
     imageUrlAltText: "Bunny is a bunny",
     animalName: "Bunny Bunn Bunn",
     aboutMe:
