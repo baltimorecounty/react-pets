@@ -248,7 +248,7 @@ export const PetItems = [
     attributes: [
       {
         label: "Species",
-        value: "Cat"
+        value: "Other"
       },
       {
         label: "Breed",
