@@ -44,7 +44,9 @@ const PetsList = () => {
     });
     setFilterItems(itemUpdated);
     const checkedCount = itemUpdated.filter(item => item.checked).length;
-    (checkedCount === 0 || checkedCount === itemUpdated.length? false: true)
+    (checkedCount === 0 || checkedCount === itemUpdated.length
+    ? false
+    : true)
       ? filterServiceList(itemUpdated)
       : setFilteredPets([]);
   };
