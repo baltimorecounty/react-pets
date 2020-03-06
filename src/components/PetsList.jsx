@@ -4,65 +4,100 @@ import PetCard from "./PetCard";
 import { PetItems } from "../files/PetsData";
 import CategoriesFilterCollapse from "./CategoriesFilterCollapse";
 
-
 const PetsList = () => {
-  const petsItems = PetItems;
-  const [filteredItems, setFilteredItems] = useState([]);
+  const [filteredPets, setFilteredPets] = useState([]);
   const [isFiltering, setIsFiltering] = useState(false);
   const [filterItems, setFilterItems] = useState([
-    { type: "species", name: "Cat", checked: true },
-    { type: "species", name: "Dog", checked: true },
-    { type: "species", name: "Other", checked: true },
-    { type: "sex", name: "Female", checked: true },
-    { type: "sex", name: "Male", checked: true }
+    { type: "species", name: "Cat", checked: false },
+    { type: "species", name: "Dog", checked: false },
+    { type: "species", name: "Other", checked: false },
+    { type: "sex", name: "Female", checked: false },
+    { type: "sex", name: "Male", checked: false }
   ]);
+  //TODO: These codes are only for april demo purpose only, once we have our service these code will be removed.
+
+  const attributesItemsCheck = (attributesItems, type, name) => {
+    return attributesItems.find(
+      x =>
+        x.label.toLocaleLowerCase() === `${type}` &&
+        x.value.toLocaleLowerCase() === `${name}`
+    );
+  };
+
+  const sexTypeCheck = (
+    attributesItems,
+    howManySexTypeSelected,
+    activeFilteredSexTypes
+  ) => {
+    return howManySexTypeSelected === 2
+      ? true
+      : howManySexTypeSelected === 1
+      ? attributesItems.find(
+          x =>
+            x.label.toLocaleLowerCase() ===
+              activeFilteredSexTypes.type.toLocaleLowerCase() &&
+            x.value.toLocaleLowerCase() ===
+              activeFilteredSexTypes.name.toLocaleLowerCase()
+        )
+      : false;
+  };
 
   const filterServiceList = itemUpdated => {
-    let finalItems=[] ;
-    const checkedspeciesType = itemUpdated.filter(item => item.checked === true  && item.type==="species");
-    const checkedSexType = itemUpdated.filter(item => item.checked === true && item.type==="sex");
+    let finalItems = [];
+    const activeFilteredSpeciesTypes = itemUpdated.filter(
+      item => item.checked === true && item.type === "species"
+    );
+    const activeFilteredSexTypes = itemUpdated.filter(
+      item => item.checked === true && item.type === "sex"
+    );
+    //===================================================
+    let checkedLength = activeFilteredSexTypes.length;
+    let howManySexTypeSelected =
+      checkedLength === 2 ? 2 : checkedLength === 0 ? 0 : 1;
+
+    //==================================================
     setIsFiltering(true);
-    let items = [...petsItems];
+    let items = [...PetItems];
 
-    let attributes =items.filter(i =>i.attributes);
- 
-    for (var i  in attributes){
-      var test =attributes[i].attributes;
-       for (var j in checkedspeciesType){
-        let type = checkedspeciesType[j].type.toLocaleLowerCase();
-        let name = checkedspeciesType[j].name.toLocaleLowerCase();
-        if (test.find(x=> x.label.toLocaleLowerCase() ===`${type}` && x.value.toLocaleLowerCase() === `${name}` )){
-          for (var k in checkedSexType){
-           let sexType = checkedSexType[k].type.toLocaleLowerCase();
-            let genderName = checkedSexType[k].name.toLocaleLowerCase();
-             if (test.find(x=> x.label.toLocaleLowerCase() ===`${sexType}` && x.value.toLocaleLowerCase() === `${genderName}` )){
-            finalItems.push(  attributes[i]);
-             }
+    for (const item of items) {
+      var attributesItems = item.attributes;
+      for (const filterSpeciesItem of activeFilteredSpeciesTypes) {
+        let type = filterSpeciesItem.type.toLocaleLowerCase();
+        let name = filterSpeciesItem.name.toLocaleLowerCase();
+     
+        if (
+          attributesItemsCheck(attributesItems, type, name) &&
+          sexTypeCheck(
+            attributesItems,
+            howManySexTypeSelected,
+            activeFilteredSexTypes[0]
+          ) ) {
+     
+            finalItems.push(item);
           }
-         
         }
-       }
-       setFilteredItems(finalItems);
-    }
-
+      }
+      setFilteredPets(finalItems);
   };
 
   const handlePetFilterChange = changeEvent => {
     setIsFiltering(false);
     const { checked, name } = changeEvent.target;
     const itemUpdated = filterItems.map(item => {
-      if (item.name.toLocaleLowerCase() === name.toLocaleLowerCase())
-        return { ...item, checked: checked };
-      return item;
+      return item.name.toLocaleLowerCase() === name.toLocaleLowerCase()
+        ? { ...item, checked: checked }
+        : item;
     });
     setFilterItems(itemUpdated);
     const checkedCount = itemUpdated.filter(item => item.checked).length;
-    const isTrue =
-      checkedCount === 0 || checkedCount === itemUpdated.length ? false : true;
-    isTrue ? filterServiceList(itemUpdated) : setFilteredItems([]);
+    (checkedCount === 0 || checkedCount === itemUpdated.length
+    ? false
+    : true)
+      ? filterServiceList(itemUpdated)
+      : setFilteredPets([]);
   };
 
-  const hasFilteredResults = !(isFiltering && filteredItems.length === 0);
+  const hasFilteredResults = !(isFiltering && filteredPets.length === 0);
   return (
     <React.Fragment>
       <div className="row">
@@ -81,18 +116,10 @@ const PetsList = () => {
           />
         </div>
         <div className="col-md-9 col-xs-12">
-          {/* <div className="row">
+          {hasFilteredResults ? (
             <div className="col">
               <FilterList
-                items={petsItems}
-                renderItem={props => <PetCard key={props.id} {...props} />}
-              />
-            </div>
-          </div> */}
-          {hasFilteredResults ? (
-            <div className="row">
-              <FilterList
-                items={filteredItems.length > 0 ? filteredItems : petsItems}
+                items={filteredPets.length > 0 ? filteredPets : PetItems}
                 renderItem={props => (
                   <div key={props.id}>
                     <PetCard {...props} />
@@ -101,7 +128,11 @@ const PetsList = () => {
               />
             </div>
           ) : (
-            "Sorry, no news matches your search criteria. Please change your search term and try again"
+            <p>
+              {" "}
+              "Sorry, no pets match your filter criteria. Please change your
+              filter and try again"
+            </p>
           )}
         </div>
       </div>
