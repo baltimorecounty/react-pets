@@ -36,7 +36,7 @@ const adoptAblePetsSummaryItems = [
     id: 3,
     icon: "far fa-envelope",
     heading: "Email:",
-    content: "<p><a href=`#`>rentalregistration@baltimorecountymd.gov</a></p>"
+    content: "<p><a href=`#`>animalservices@baltimorecountymd.gov</a></p>"
   },
   {
     id: 4,
