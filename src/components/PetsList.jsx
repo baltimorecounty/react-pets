@@ -24,24 +24,6 @@ const PetsList = () => {
     );
   };
 
-  const sexTypeCheck = (
-    attributesItems,
-    howManySexTypeSelected,
-    activeFilteredSexTypes
-  ) => {
-    return howManySexTypeSelected === 2
-      ? true
-      : howManySexTypeSelected === 1
-      ? attributesItems.find(
-          x =>
-            x.label.toLocaleLowerCase() ===
-              activeFilteredSexTypes.type.toLocaleLowerCase() &&
-            x.value.toLocaleLowerCase() ===
-              activeFilteredSexTypes.name.toLocaleLowerCase()
-        )
-      : false;
-  };
-
   const filterServiceList = itemUpdated => {
     let finalItems = [];
     const activeFilteredSpeciesTypes = itemUpdated.filter(
@@ -51,10 +33,7 @@ const PetsList = () => {
       item => item.checked === true && item.type === "sex"
     );
     //===================================================
-    let checkedLength = activeFilteredSexTypes.length;
-    let howManySexTypeSelected =
-      checkedLength === 2 ? 2 : checkedLength === 0 ? 0 : 1;
-
+    let howManySexTypeSelected = activeFilteredSexTypes.length;
     //==================================================
     setIsFiltering(true);
     let items = [...PetItems];
@@ -64,20 +43,22 @@ const PetsList = () => {
       for (const filterSpeciesItem of activeFilteredSpeciesTypes) {
         let type = filterSpeciesItem.type.toLocaleLowerCase();
         let name = filterSpeciesItem.name.toLocaleLowerCase();
-     
+
         if (
           attributesItemsCheck(attributesItems, type, name) &&
-          sexTypeCheck(
-            attributesItems,
-            howManySexTypeSelected,
-            activeFilteredSexTypes[0]
-          ) ) {
-     
-            finalItems.push(item);
-          }
+          (howManySexTypeSelected !== 1
+            ? true
+            : attributesItemsCheck(
+                attributesItems,
+                activeFilteredSexTypes[0].type.toLocaleLowerCase(),
+                activeFilteredSexTypes[0].name.toLocaleLowerCase()
+              ))
+        ) {
+          finalItems.push(item);
         }
       }
-      setFilteredPets(finalItems);
+    }
+    setFilteredPets(finalItems);
   };
 
   const handlePetFilterChange = changeEvent => {
