@@ -24,11 +24,10 @@ const PetsList = () => {
     );
   };
 
-  //TODO: These codes are only for april demo purpose only, once we have our service these code will be removed.
   const filterServiceList = itemUpdated => {
     let finalItems = [];
     const activeFilteredSpeciesTypes = itemUpdated.filter(
-      item => item.checked === true
+      item => item.checked === true && item.type === "species"
     );
     const activeFilteredSexTypes = itemUpdated.filter(
       item => item.checked === true && item.type === "sex"
@@ -37,7 +36,14 @@ const PetsList = () => {
     let howManySexTypeSelected = activeFilteredSexTypes.length;
     setIsFiltering(true);
     let items = [...PetItems];
-
+    let sexType =
+      howManySexTypeSelected === 1
+        ? activeFilteredSexTypes[0].type.toLocaleLowerCase()
+        : "none";
+    let genderName =
+      howManySexTypeSelected === 1
+        ? activeFilteredSexTypes[0].name.toLocaleLowerCase()
+        : "none";
     for (const item of items) {
       var attributesItems = item.attributes;
       for (const filterSpeciesItem of activeFilteredSpeciesTypes) {
@@ -48,16 +54,11 @@ const PetsList = () => {
           attributesItemsCheck(attributesItems, type, name) &&
           (howManySexTypeSelected !== 1
             ? true
-            : attributesItemsCheck(
-                attributesItems,
-                activeFilteredSexTypes[0].type.toLocaleLowerCase(),
-                activeFilteredSexTypes[0].name.toLocaleLowerCase()
-              ))
+            : attributesItemsCheck(attributesItems, sexType, genderName))
         ) {
           finalItems.push(item);
         }
       }
-    
     }
     setFilteredPets(finalItems);
   };
