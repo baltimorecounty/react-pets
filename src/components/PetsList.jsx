@@ -24,6 +24,18 @@ const PetsList = () => {
     );
   };
 
+  const attributeLabelValue = (activeFiltered, howManySelected) => {
+    let type =
+      howManySelected === 1
+        ? activeFiltered.type.toLocaleLowerCase()
+        : "none";
+    let name =
+      howManySelected === 1
+        ? activeFiltered.name.toLocaleLowerCase()
+        : "none";
+    return [type, name];
+  };
+
   const filterServiceList = itemUpdated => {
     let finalItems = [];
     const activeFilteredSpeciesTypes = itemUpdated.filter(
@@ -32,29 +44,41 @@ const PetsList = () => {
     const activeFilteredSexTypes = itemUpdated.filter(
       item => item.checked === true && item.type === "sex"
     );
+    let howManySelected = 0;
+    let type2 = "none";
+    let name2 = "none";
+    var retunValues;
+    if (activeFilteredSpeciesTypes.length) {
+      howManySelected = activeFilteredSexTypes.length;
+      retunValues = attributeLabelValue(
+        activeFilteredSexTypes[0],
+        howManySelected
+      );
+    } else {
+      howManySelected = activeFilteredSpeciesTypes.length;
+      retunValues = attributeLabelValue(
+        activeFilteredSpeciesTypes[0],
+        howManySelected
+      );
+    }
+    type2 = retunValues[0];
+    name2 = retunValues[1];
 
-    let howManySexTypeSelected = activeFilteredSexTypes.length;
     setIsFiltering(true);
     let items = [...PetItems];
-    let sexType =
-      howManySexTypeSelected === 1
-        ? activeFilteredSexTypes[0].type.toLocaleLowerCase()
-        : "none";
-    let genderName =
-      howManySexTypeSelected === 1
-        ? activeFilteredSexTypes[0].name.toLocaleLowerCase()
-        : "none";
     for (const item of items) {
       var attributesItems = item.attributes;
-      for (const filterSpeciesItem of activeFilteredSpeciesTypes) {
-        let type = filterSpeciesItem.type.toLocaleLowerCase();
-        let name = filterSpeciesItem.name.toLocaleLowerCase();
 
+      for (const item2 of activeFilteredSpeciesTypes.length > 0
+        ? activeFilteredSpeciesTypes
+        : activeFilteredSexTypes) {
+        let type = item2.type.toLocaleLowerCase();
+        let name = item2.name.toLocaleLowerCase();
         if (
           attributesItemsCheck(attributesItems, type, name) &&
-          (howManySexTypeSelected !== 1
+          (howManySelected !== 1
             ? true
-            : attributesItemsCheck(attributesItems, sexType, genderName))
+            : attributesItemsCheck(attributesItems, type2, name2))
         ) {
           finalItems.push(item);
         }

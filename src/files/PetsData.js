@@ -86,7 +86,7 @@ export const PetItems = [
       },
       {
         label: "Sex",
-        value: "Male"
+        value: "Female"
       },
       {
         label: "Weight",
@@ -382,7 +382,7 @@ export const PetItems = [
       },
       {
         label: "Sex",
-        value: "Male"
+        value: "Female"
       },
       {
         label: "Weight",
