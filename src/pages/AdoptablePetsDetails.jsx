@@ -14,6 +14,8 @@ const AdoptablePetsDetails = props => {
     animalName
   } = selectedPet;
 
+  var petsInformationAboutAdoption = window.pets.informationAbout;
+
   return (
     <div className="dg_internal-template">
       <div className="container">
@@ -29,14 +31,12 @@ const AdoptablePetsDetails = props => {
                 id={id}
               />
             </div>
-            <h3>Information About Adoption</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-              lectus metus, lacinia eget nunc vel, tincidunt rutrum mi. Duis sed
-              mauris nec lorem imperdiet feugiat vel a neque. Nulla euismod
-              rutrum orci sed euismod. Aliquam vel sollicitudin tellus, at
-              cursus libero. Nam luctus id enim et pretium.
-            </p>
+            {petsInformationAboutAdoption ? (
+              <div>
+                <h3>Information About Adoption</h3>
+                <p>{petsInformationAboutAdoption}</p>
+              </div>
+            ) : null}
           </div>
           <div className="col-md-4 col-sm-12">
             <PetSidebar />
