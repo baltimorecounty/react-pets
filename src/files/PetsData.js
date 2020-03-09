@@ -11,8 +11,8 @@ export const PetItems = [
     status: "Alive and Kicking",
     attributes: [
       {
-        label: "species",
-        value: "Other"
+        label: "Species",
+        value: "Dog"
       },
       {
         label: "Breed",
@@ -134,7 +134,7 @@ export const PetItems = [
       },
       {
         label: "Breed",
-        value: "Pit Bull Terrier"
+        value: "Persian Cat"
       },
       {
         label: "Color",
@@ -193,7 +193,7 @@ export const PetItems = [
       },
       {
         label: "Breed",
-        value: "Pit Bull Terrier"
+        value: "Bengal Cat"
       },
       {
         label: "Color",
@@ -252,7 +252,125 @@ export const PetItems = [
       },
       {
         label: "Breed",
-        value: "Pit Bull Terrier"
+        value: "Maine Coon"
+      },
+      {
+        label: "Color",
+        value: "White"
+      },
+      {
+        label: "Secondary Color",
+        value: "Brindle"
+      },
+      {
+        label: "Sex",
+        value: "Male"
+      },
+      {
+        label: "Weight",
+        value: "106.0"
+      },
+      {
+        label: "Weight Unit",
+        value: "lb"
+      },
+      {
+        label: "Age",
+        value: "5"
+      },
+      {
+        label: "Age Unit",
+        value: "Years"
+      },
+
+      {
+        label: "Spayed/Neutered",
+        value: "Yes"
+      },
+      {
+        label: "Shelter Arrival Date",
+        value: "12/25/2019"
+      }
+    ]
+  },
+  {
+    id: "ACIMP-2019-06116",
+    dateAdoptedRedeemed: "12/25/19",
+    imageUrl:
+      "https://baltimorecountymd.gov/sebin/h/g/AdoptAPetTestBunnyImage.jpg",
+    imageUrlAltText: "Bunny is a bunny",
+    animalName: "Bunny Bunn Bunn",
+    aboutMe:
+      "My name is Bubbles Jr. and I'm a handsome giant looking for my forever home! It sometimes take me some time to warm up to new people, but once I do I'm a big love bug! I can be a bit strong on the leash, but with some work on my leash manners I should be just fine! If you're looking for a big guy to enter your heart, come check me out today!",
+    accellaId: "ACC-12346",
+    status: "Alive and Kicking",
+    attributes: [
+      {
+        label: "Species",
+        value: "Other"
+      },
+      {
+        label: "Breed",
+        value: "Holland Lop"
+      },
+      {
+        label: "Color",
+        value: "White"
+      },
+      {
+        label: "Secondary Color",
+        value: "Brindle"
+      },
+      {
+        label: "Sex",
+        value: "Male"
+      },
+      {
+        label: "Weight",
+        value: "106.0"
+      },
+      {
+        label: "Weight Unit",
+        value: "lb"
+      },
+      {
+        label: "Age",
+        value: "5"
+      },
+      {
+        label: "Age Unit",
+        value: "Years"
+      },
+
+      {
+        label: "Spayed/Neutered",
+        value: "Yes"
+      },
+      {
+        label: "Shelter Arrival Date",
+        value: "12/25/2019"
+      }
+    ]
+  },
+  {
+    id: "ACIMP-2019-061167",
+    dateAdoptedRedeemed: "12/25/19",
+    imageUrl:
+      "https://baltimorecountymd.gov/sebin/b/z/AdoptAPetTestGuineaImage.jpg",
+    imageUrlAltText: "Guinea Pig",
+    animalName: "Buzz",
+    aboutMe:
+      "My name is Bubbles Jr. and I'm a handsome giant looking for my forever home! It sometimes take me some time to warm up to new people, but once I do I'm a big love bug! I can be a bit strong on the leash, but with some work on my leash manners I should be just fine! If you're looking for a big guy to enter your heart, come check me out today!",
+    accellaId: "ACC-12346",
+    status: "Alive and Kicking",
+    attributes: [
+      {
+        label: "Species",
+        value: "Other"
+      },
+      {
+        label: "Breed",
+        value: "Skinny pig"
       },
       {
         label: "Color",
