@@ -14,7 +14,7 @@ const AdoptablePetsDetails = props => {
     animalName
   } = selectedPet;
 
-  var petsInformationAboutAdoption = window.petsInformationAboutAdoption;
+  var petsInformationAboutAdoption = window.pets.informationAboutAdoption;
 
   return (
     <div className="dg_internal-template">
