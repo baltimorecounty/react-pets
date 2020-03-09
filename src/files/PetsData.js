@@ -297,7 +297,7 @@ export const PetItems = [
     id: "ACIMP-2019-06116",
     dateAdoptedRedeemed: "12/25/19",
     imageUrl:
-      "https://baltimorecountymd.gov/sebin/h/g/AdoptAPetTestBunnyImage.jpg",
+      "https://baltimorecountymd.gov/sebin/h/g/AdoptAPetTestBunnyImage.jpeg",
     imageUrlAltText: "Bunny is a bunny",
     animalName: "Bunny Bunn Bunn",
     aboutMe:
