@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import FilterList from "./FilterList";
 import PetCard from "./PetCard";
 import { PetItems } from "../files/PetsData";
-import React, { useState } from "react";
 import CategoriesFilterCollapse from "./CategoriesFilterCollapse";
 
 const PetsList = () => {
@@ -25,25 +24,17 @@ const PetsList = () => {
     );
   };
 
-  const filterServiceList = itemUpdated => {
-    let finalItems = [];
-    const activeFilteredSpeciesTypes = itemUpdated.filter(
-      item => item.checked === true && item.type === "species"
-    );
-    const activeFilteredSexTypes = itemUpdated.filter(
-      item => item.checked === true && item.type === "sex"
-    );
-    //===================================================
-    let howManySexTypeSelected = activeFilteredSexTypes.length;
-    //==================================================
-    { type: "species", name: "Other", checked: false }
-  ]);
   //TODO: These codes are only for april demo purpose only, once we have our service these code will be removed.
   const filterServiceList = itemUpdated => {
     let finalItems = [];
     const activeFilteredSpeciesTypes = itemUpdated.filter(
       item => item.checked === true
     );
+    const activeFilteredSexTypes = itemUpdated.filter(
+      item => item.checked === true && item.type === "sex"
+    );
+
+    let howManySexTypeSelected = activeFilteredSexTypes.length;
     setIsFiltering(true);
     let items = [...PetItems];
 
@@ -66,6 +57,7 @@ const PetsList = () => {
           finalItems.push(item);
         }
       }
+    
     }
     setFilteredPets(finalItems);
   };

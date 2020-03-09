@@ -353,7 +353,7 @@ export const PetItems = [
     ]
   },
   {
-    id: "ACIMP-2019-061167",
+    id: "ACIMP-2019-06117",
     dateAdoptedRedeemed: "12/25/19",
     imageUrl:
       "https://baltimorecountymd.gov/sebin/b/z/AdoptAPetTestGuineaImage.jpg",
