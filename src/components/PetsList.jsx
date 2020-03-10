@@ -21,9 +21,8 @@ const PetsList = () => {
             </div>
           ) : (
             <p>
-              {" "}
               "Sorry, no pets match your filter criteria. Please change your
-              filter and try again"{" "}
+              filter and try again"
             </p>
           )}
         </div>
