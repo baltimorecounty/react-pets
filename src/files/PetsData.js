@@ -323,7 +323,7 @@ export const PetItems = [
       },
       {
         label: "Sex",
-        value: "Male"
+        value: "Unknown"
       },
       {
         label: "Weight",
