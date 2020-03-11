@@ -9,8 +9,10 @@ const PetAttributes = props => {
   const { attributes } = props;
 
   var displayAttributes = [
+    "Species",
     "Breed",
     "Color",
+    "Sex",
     "Weight",
     "Age",
     "Spayed/Neutered",
