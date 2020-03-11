@@ -12,7 +12,8 @@ const PetsList = () => {
     { type: "species", name: "Dog", checked: false },
     { type: "species", name: "Other", checked: false },
     { type: "sex", name: "Female", checked: false },
-    { type: "sex", name: "Male", checked: false }
+    { type: "sex", name: "Male", checked: false },
+    { type: "sex", name: "Unknown", checked: false }
   ]);
   //TODO: These codes are only for april demo purpose only, once we have our service these code will be removed.
 
@@ -26,13 +27,9 @@ const PetsList = () => {
 
   const attributeLabelValue = (activeFiltered, howManySelected) => {
     let type =
-      howManySelected === 1
-        ? activeFiltered.type.toLocaleLowerCase()
-        : "none";
+      howManySelected === 1 ? activeFiltered.type.toLocaleLowerCase() : "none";
     let name =
-      howManySelected === 1
-        ? activeFiltered.name.toLocaleLowerCase()
-        : "none";
+      howManySelected === 1 ? activeFiltered.name.toLocaleLowerCase() : "none";
     return [type, name];
   };
 
