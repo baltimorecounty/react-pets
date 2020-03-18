@@ -7,15 +7,17 @@ const CategoriesFilterCollapse = props => {
   return (
     <Collapse id={id} header={header}>
       {items.map(item => {
+        const { label, value } = item;
+        const name = `${label}-${value}`.toLowerCase();
         return (
           <Checkbox
-            key={item.name}
-            id={item.name}
-            name={item.name}
-            onChange={onChange}
-            checked={item.checked}
-            label={item.name}
-            value={`${item.checked}`}
+            key={name}
+            id={name}
+            name={id}
+           // onChange={onChange}
+           // checked={item.checked}
+            label={label}
+            value={value}
           />
         );
       })}

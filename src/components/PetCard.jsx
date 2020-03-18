@@ -10,8 +10,8 @@ import PetThumbnail from "./PetThumbnail";
 import React from "react";
 
 const PetCard = props => {
-  const { imageUrl, imageUrlAltText, animalName, id, attributes } = props;
-
+  const { imageUrl, imageUrlAltText, animalName, id, attributes , url} = props;
+  console.log('props:' + JSON.stringify(props));
   return (
     <Card className="text-left">
       <h2>{animalName}</h2>
@@ -30,7 +30,7 @@ const PetCard = props => {
       </CardContent>
       <CardFooter className="text-right">
         <Link to={`/petDetails/${id}`}>
-          <Button as="a" text="Details" />
+          <Button as="a" text="Details" href={url}/>
         </Link>
       </CardFooter>
     </Card>
