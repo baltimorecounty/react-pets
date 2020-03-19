@@ -2,6 +2,7 @@ import React from "react";
 import PetThumbnail from "./PetThumbnail";
 import PetAttributeRows from "./PetAttributeRows";
 
+console.log("INSIDE DETAILS PAGE");
 const PetDetail = props => {
   const {
     imageUrl,
@@ -15,6 +16,7 @@ const PetDetail = props => {
   console.log(props);
   return (
     <div className="container">
+      <h2> This is a tst </h2>
       <h2>{animalName}</h2>
       <div className="row">
         <div className="col-lg-8 col-md-4 col-xs-12">
