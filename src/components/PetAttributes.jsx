@@ -9,21 +9,37 @@ const PetAttributes = props => {
   const { attributes } = props;
 
   var displayAttributes = [
-    "Species",
-    "Breed",
-    "Color",
+    "Type",
+    "Primary Breed",
+    "Primary Color",
     "Sex",
     "Weight",
     "Age",
-    "Spayed/Neutered",
+    "Altered",
     "Shelter Arrival Date"
   ];
+
+  const ConvertToFriendlyNames = value => {
+    if (value === "Type") {
+      return "Species";
+    }
+    if (value === "Primary Breed") {
+      return "Breed";
+    }
+    if (value === "Altered") {
+      return "Spayed/Neutered";
+    }
+    if (value === "Primary Color") {
+      return "Color";
+    }
+    return value;
+  };
 
   const PetAttributeRows = attributes
     .filter(attribute => displayAttributes.includes(attribute.label))
     .map((item, index) => (
       <TableRow key={index}>
-        <TableHeadCell>{item.label}</TableHeadCell>
+        <TableHeadCell>{ConvertToFriendlyNames(item.label)}</TableHeadCell>
         {item.label === "Age" ? (
           <TableCell>
             <span>

@@ -10,8 +10,15 @@ import PetThumbnail from "./PetThumbnail";
 import React from "react";
 
 const PetCard = props => {
-  const { imageUrl, imageUrlAltText, animalName, id, attributes , url} = props;
-  console.log('props:' + JSON.stringify(props));
+  const {
+    imageUrl,
+    imageUrlAltText,
+    animalName,
+    animalId,
+    attributes,
+    url
+  } = props;
+
   return (
     <Card className="text-left">
       <h2>{animalName}</h2>
@@ -24,13 +31,13 @@ const PetCard = props => {
             />
           </div>
           <div className="col-md-8 col-xs-12">
-            <PetAttributeRows attributes={attributes} id={id} />
+            <PetAttributeRows attributes={attributes} animalId={animalId} />
           </div>
         </div>
       </CardContent>
       <CardFooter className="text-right">
-        <Link to={`/petDetails/${id}`}>
-          <Button as="a" text="Details" href={url}/>
+        <Link to={`/petDetails/${animalId}`}>
+          <Button as="a" text="Details" href={url} />
         </Link>
       </CardFooter>
     </Card>

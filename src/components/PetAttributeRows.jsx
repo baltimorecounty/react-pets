@@ -11,14 +11,14 @@ import PropTypes from "prop-types";
 import React from "react";
 
 const PetAttributeRows = props => {
-  const { attributes, id } = props;
+  const { attributes, animalId } = props;
 
   return (
     <Table className="table-fixed">
       <TableBody>
-        <TableRow key={id}>
-          <TableHeadCell>Animal ID</TableHeadCell>
-          <TableCell>{id}</TableCell>
+        <TableRow key={animalId}>
+          <TableHeadCell>Animal Id</TableHeadCell>
+          <TableCell>{animalId}</TableCell>
         </TableRow>
         <PetAttributes attributes={attributes} />
       </TableBody>

@@ -9,7 +9,7 @@ const PetDetail = props => {
     aboutMe,
     attributes,
     animalName,
-    id
+    animalId
   } = props;
   return (
     <div className="container">
@@ -27,7 +27,7 @@ const PetDetail = props => {
       </div>
       <div className="row">
         <div className="col-lg-12 col-md-8 col-xs-12">
-          <PetAttributeRows attributes={attributes} id={id} />
+          <PetAttributeRows attributes={attributes} id={animalId} />
         </div>
       </div>
     </div>

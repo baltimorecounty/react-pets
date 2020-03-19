@@ -15,20 +15,6 @@ const GetStatus = () =>
 /**
  * Get News Data from SiteExecutive structured content
  */
-// const GetPets = (endPoint = "/api/pets", filters = "") =>
-//   axios
-//   .get(BuildEndPoint({ endPoint, filters }))
-//   .then(({ status, data }) => (status === 200 ? data : []));
-
-// export { GetStatus, GetPets };
-
-const GetPets1 = (endPoint = "/hub/pets", status = "adoptable", petType = "") =>
-  axios
-    .get(
-      `${getValue("apiRoot")}${endPoint}?status=${status}&petType=${petType}`
-    )
-    .then(({ status, data }) => (status === 200 ? data : []));
-
 const GetPets = (endPoint = "/hub/pets", status = "adoptable", petType = "") =>
   axios
     .get(
@@ -39,10 +25,3 @@ const GetPets = (endPoint = "/hub/pets", status = "adoptable", petType = "") =>
     .then(({ status, data }) => (status === 200 ? data : []));
 
 export { GetStatus, GetPets };
-
-// const GetPets = (status = "adoptable", petType = "") =>
-//   axios
-//     .get(`${getValue("apiRoot")}/hub/pets?status=${status}&petType=${petType}`)
-//     .then(({ status, data }) => (status === 200 ? data : []));
-
-// export { GetStatus, GetPets };

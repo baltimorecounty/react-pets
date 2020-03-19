@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import usePets from "../hooks/usePets";
 import { Button, Alert } from "@baltimorecounty/dotgov-components";
-import FilterCollapse from "./CategoriesFilterCollapse";
+
 const FilterList = ({
   title = "",
   as: As = React.Fragment,
@@ -12,32 +12,18 @@ const FilterList = ({
   apiEndpoint,
   ...props
 }) => {
-  console.log('here');
-  console.log(apiEndpoint);
-  const [
-    {
-      hasError,
-      petsItems = [],
-      isLoading,
-      loadMoreEndPoint,
-      //newsRoomTotalRecords,
-      executeLoadMore,
-      
-    },
-  //  {  setPetsEndPoint,setPetsFilters,setExecuteLoadMore }
-  ] = usePets(apiEndpoint);
- 
-  const [activeFilters, setActiveFilters] = useState({});
-  // if (hasError) {
-  //   return (
-  //     <Alert className="status" type="error">
-  //       <p>
-  //         Unable to retrieve the list of {title}. Please try again in a couple
-  //         of minutes.
-  //       </p>
-  //     </Alert>
-  //   );
-  // }
+  const [{ hasError, petsItems = [], isLoading }] = usePets(apiEndpoint);
+
+  if (hasError) {
+    return (
+      <Alert className="status" type="error">
+        <p>
+          Unable to retrieve the list of {title}. Please try again in a couple
+          of minutes.
+        </p>
+      </Alert>
+    );
+  }
 
   return (
     <>
@@ -46,23 +32,8 @@ const FilterList = ({
           <p>Loading {title}...</p>
         ) : (
           <>
-          <div className="col-3">
-              {filters.map(filter => {
-                return (
-                  <FilterCollapse
-                    header={filter.displayName}
-                    id={filter.targetApiField.toLowerCase()}
-                  //  onChange={handleFilterChange}
-                    items={filter.options}
-                  />
-                );
-              })}
-            </div>
             <div className="col-9">
-           
               <As {...props}>{petsItems.map(renderItem)}</As>
-      
->
             </div>
           </>
         )}
