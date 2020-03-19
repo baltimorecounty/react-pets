@@ -5,9 +5,7 @@ import usePets from "../hooks/usePets";
 
 const AdoptablePetsDetails = props => {
   const { animalId } = props.match.params;
-  const [{ petsItems, isLoading }] = usePets(`/hub/pets/${animalId}`);
-
-  console.log(usePets(`/hub/pets/${animalId}`));
+  const [{ petItems, isLoading }] = usePets(`/hub/pets/${animalId}`);
 
   const {
     imageUrl,
@@ -15,7 +13,9 @@ const AdoptablePetsDetails = props => {
     aboutMe,
     attributes,
     animalName
-  } = petsItems[0];
+  } = petItems;
+
+  console.log(petItems);
 
   var petsInformationAboutAdoption = window.pets.informationAbout;
 
@@ -28,14 +28,14 @@ const AdoptablePetsDetails = props => {
               <p>Loading Animal Services Pets...</p>
             ) : (
               <div id="dg_main-content">
-                {/* <PetDetail
+                <PetDetail
                   imageUrl={imageUrl}
                   imageUrlAltText={imageUrlAltText}
                   aboutMe={aboutMe}
                   attributes={attributes}
                   animalName={animalName}
                   animalId={animalId}
-                /> */}
+                />
               </div>
             )}
             {petsInformationAboutAdoption ? (

@@ -12,7 +12,7 @@ const FilterList = ({
   apiEndpoint,
   ...props
 }) => {
-  const [{ hasError, petsItems = [], isLoading }] = usePets(apiEndpoint);
+  const [{ hasError, petItems = [], isLoading }] = usePets(apiEndpoint);
 
   if (hasError) {
     return (
@@ -33,7 +33,7 @@ const FilterList = ({
         ) : (
           <>
             <div className="col-9">
-              <As {...props}>{petsItems.map(renderItem)}</As>
+              <As {...props}>{petItems.map(renderItem)}</As>
             </div>
           </>
         )}
