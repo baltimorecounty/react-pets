@@ -19,6 +19,7 @@ const PetAttributes = props => {
     "Shelter Arrival Date"
   ];
 
+  //TODO: Possibly needs to be added to the service. But for now this is where this lives
   const ConvertToFriendlyNames = value => {
     var newValue = "";
     switch (value) {
@@ -54,7 +55,7 @@ const PetAttributes = props => {
         ) : item.label === "Weight" ? (
           <TableCell>
             <span>
-              {item.value}{" "}
+              {item.value}
               {attributes.find(x => x.label === "Weight Unit").value}
             </span>
           </TableCell>

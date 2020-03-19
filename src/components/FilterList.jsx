@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import usePets from "../hooks/usePets";
-import { Button, Alert } from "@baltimorecounty/dotgov-components";
+import { Alert } from "@baltimorecounty/dotgov-components";
 
 const FilterList = ({
   title = "",

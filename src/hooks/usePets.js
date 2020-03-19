@@ -9,7 +9,6 @@ const usePets = endPoint => {
     GetPets(endPoint)
       .then(response => {
         const { records } = response;
-
         records ? setPetItems([...records]) : setPetItems(response);
       })
       .catch(() => {

@@ -15,8 +15,6 @@ const AdoptablePetsDetails = props => {
     animalName
   } = petItems;
 
-  console.log(petItems);
-
   var petsInformationAboutAdoption = window.pets.informationAbout;
 
   return (

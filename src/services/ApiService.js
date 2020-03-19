@@ -15,16 +15,13 @@ const GetStatus = () =>
 /**
  * Get News Data from SiteExecutive structured content
  */
-const GetPets = (endPoint = "/hub/pets", status = "adoptable", petType = "") =>{
-
-       console.log('apiRoot:' + getValue("apiRoot"));
- let test= axios
+const GetPets = (endPoint = "/hub/pets", status = "adoptable", petType = "") =>
+  axios
     .get(
       `${getValue("apiRoot")}${endPoint}?status=${status}${
         petType ? `&petType=${petType}` : ""
       }`
     )
     .then(({ status, data }) => (status === 200 ? data : []));
-return test;
-}
+
 export { GetStatus, GetPets };

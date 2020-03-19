@@ -11,22 +11,14 @@ import React from "react";
 
 const PetCard = props => {
   const {
-    id,
     imageUrl,
     imageUrlAltText,
     animalName,
     animalId,
     attributes,
-     url
+    url
   } = props;
 
-  //console.log("props:" + JSON.stringify(props));
-  //http://localhost:54727/api/hub/pets?id=" + animalId + `&status=adoptable`;
- // let url =
-  //  "`https://petsdev.bcg.ad.bcgov.us/api/pets?" +
-  //  animalId +
-   // `&status=adoptable`;
- // console.log("url:" + url);
   return (
     <Card className="text-left">
       <h2>{animalName}</h2>
@@ -44,9 +36,8 @@ const PetCard = props => {
         </div>
       </CardContent>
       <CardFooter className="text-right">
-         <Link to={`/petDetails/${animalId}`}> 
-
-        <Button as="a" text="Details" href={url} />
+        <Link to={`/petDetails/${animalId}`}>
+          <Button as="a" text="Details" href={url} />
         </Link>
       </CardFooter>
     </Card>
