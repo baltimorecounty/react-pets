@@ -12,7 +12,8 @@ const PetDetail = props => {
     animalName,
     animalId
   } = props;
- 
+
+  console.log(props);
   return (
     <div className="container">
       <h2> This is a tst </h2>
