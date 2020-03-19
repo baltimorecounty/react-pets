@@ -20,19 +20,24 @@ const PetAttributes = props => {
   ];
 
   const ConvertToFriendlyNames = value => {
-    if (value === "Type") {
-      return "Species";
+    var newValue = "";
+    switch (value) {
+      case "Type":
+        newValue = "Species";
+        break;
+      case "Primary Breed":
+        newValue = "Breed";
+        break;
+      case "Altered":
+        newValue = "Spayed/Neutered";
+        break;
+      case "Primary Color":
+        newValue = "Color";
+        break;
+      default:
+        newValue = value;
     }
-    if (value === "Primary Breed") {
-      return "Breed";
-    }
-    if (value === "Altered") {
-      return "Spayed/Neutered";
-    }
-    if (value === "Primary Color") {
-      return "Color";
-    }
-    return value;
+    return newValue;
   };
 
   const PetAttributeRows = attributes
