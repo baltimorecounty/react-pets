@@ -4,7 +4,7 @@ import React from "react";
 import usePets from "../hooks/usePets";
 
 const PetsList = () => {
-  const [{ petsItems = [], isLoading }] = usePets();
+  const [{ petsItems = [], isLoading }] = usePets("/hub/pets");
 
   return (
     <React.Fragment>

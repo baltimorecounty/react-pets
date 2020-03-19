@@ -5,9 +5,9 @@ import usePets from "../hooks/usePets";
 
 const AdoptablePetsDetails = props => {
   const { animalId } = props.match.params;
-  const [{ petsItems = [], isLoading }] = usePets(`/hub/pets/${animalId}`);
+  const [{ petsItems, isLoading }] = usePets(`/hub/pets/${animalId}`);
 
-  console.log(petsItems);
+  console.log(usePets(`/hub/pets/${animalId}`));
 
   const {
     imageUrl,
@@ -15,7 +15,7 @@ const AdoptablePetsDetails = props => {
     aboutMe,
     attributes,
     animalName
-  } = petsItems;
+  } = petsItems[0];
 
   var petsInformationAboutAdoption = window.pets.informationAbout;
 
