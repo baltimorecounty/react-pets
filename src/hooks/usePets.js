@@ -4,13 +4,10 @@ import { GetPets } from "../services/ApiService";
 const usePets = endPoint => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
-  const [petItems, setPetItems] = useState([]);
+  const [response, setResponse] = useState([]);
   useEffect(() => {
     GetPets(endPoint)
-      .then(response => {
-        const { records } = response;
-        setPetItems(records ? [...records] : response);
-      })
+      .then(response => setResponse(response))
       .catch(() => {
         setHasError(true);
       })
@@ -22,7 +19,7 @@ const usePets = endPoint => {
   return [
     {
       hasError,
-      petItems,
+      response,
       isLoading
     }
   ];

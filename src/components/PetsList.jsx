@@ -4,7 +4,9 @@ import React from "react";
 import usePets from "../hooks/usePets";
 
 const PetsList = () => {
-  const [{ petItems = [], isLoading }] = usePets("/hub/pets");
+  const [{ response, isLoading }] = usePets("/hub/pets");
+
+  const { records } = response;
 
   return (
     <React.Fragment>
@@ -14,11 +16,11 @@ const PetsList = () => {
         ) : (
           <>
             <div className="row">
-              {petItems.length > 0 ? (
+              {records.length > 0 ? (
                 <FilterList
-                  title="Baltimore County Adoptable Pets"
+                  title="Adoptable Pets"
                   apiEndpoint="/hub/pets"
-                  items={petItems}
+                  items={records}
                   renderItem={props => (
                     <div key={props.animalId}>
                       <PetCard {...props} />
