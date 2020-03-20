@@ -12,7 +12,7 @@ const FilterList = ({
   apiEndpoint,
   ...props
 }) => {
-  const [{ hasError, response = [], isLoading }] = usePets(apiEndpoint);
+  const [{ hasError, response, isLoading }] = usePets(apiEndpoint);
   const { records } = response;
 
   if (hasError) {
