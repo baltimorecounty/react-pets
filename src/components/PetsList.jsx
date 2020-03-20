@@ -1,31 +1,38 @@
 import FilterList from "./FilterList";
 import PetCard from "./PetCard";
-import { PetItems } from "../files/PetsData";
 import React from "react";
+import usePets from "../hooks/usePets";
 
 const PetsList = () => {
+  const [{ response, isLoading }] = usePets("/hub/pets");
+
+  const { records } = response;
+
   return (
     <React.Fragment>
-      <div className="row">
-        <div className="col-md-9 col-xs-12">
-          {PetItems ? (
-            <div className="col">
-              <FilterList
-                items={PetItems}
-                renderItem={props => (
-                  <div key={props.id}>
-                    <PetCard {...props} />
-                  </div>
-                )}
-              />
+      <div className="container">
+        {isLoading ? (
+          <p>Loading Adoptable Pets...</p>
+        ) : (
+          <>
+            <div className="row">
+              {records.length > 0 ? (
+                <FilterList
+                  title="Adoptable Pets"
+                  apiEndpoint="/hub/pets"
+                  items={records}
+                  renderItem={props => (
+                    <div key={props.animalId}>
+                      <PetCard {...props} />
+                    </div>
+                  )}
+                />
+              ) : (
+                "Sorry, no pets match your search criteria. Please change your search term and try again"
+              )}
             </div>
-          ) : (
-            <p>
-              "Sorry, no pets match your filter criteria. Please change your
-              filter and try again"
-            </p>
-          )}
-        </div>
+          </>
+        )}
       </div>
     </React.Fragment>
   );

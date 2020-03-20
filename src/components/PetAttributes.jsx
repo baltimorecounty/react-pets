@@ -9,21 +9,43 @@ const PetAttributes = props => {
   const { attributes } = props;
 
   var displayAttributes = [
-    "Species",
-    "Breed",
-    "Color",
+    "Type",
+    "Primary Breed",
+    "Primary Color",
     "Sex",
     "Weight",
     "Age",
-    "Spayed/Neutered",
+    "Altered",
     "Shelter Arrival Date"
   ];
+
+  //TODO: Possibly needs to be added to the service. But for now this is where this lives
+  const ConvertToFriendlyNames = value => {
+    var newValue = "";
+    switch (value) {
+      case "Type":
+        newValue = "Species";
+        break;
+      case "Primary Breed":
+        newValue = "Breed";
+        break;
+      case "Altered":
+        newValue = "Spayed / Neutered";
+        break;
+      case "Primary Color":
+        newValue = "Color";
+        break;
+      default:
+        newValue = value;
+    }
+    return newValue;
+  };
 
   const PetAttributeRows = attributes
     .filter(attribute => displayAttributes.includes(attribute.label))
     .map((item, index) => (
       <TableRow key={index}>
-        <TableHeadCell>{item.label}</TableHeadCell>
+        <TableHeadCell>{ConvertToFriendlyNames(item.label)}</TableHeadCell>
         {item.label === "Age" ? (
           <TableCell>
             <span>
@@ -33,7 +55,7 @@ const PetAttributes = props => {
         ) : item.label === "Weight" ? (
           <TableCell>
             <span>
-              {item.value}{" "}
+              {item.value}
               {attributes.find(x => x.label === "Weight Unit").value}
             </span>
           </TableCell>
