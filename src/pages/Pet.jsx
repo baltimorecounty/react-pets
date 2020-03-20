@@ -23,7 +23,7 @@ const AdoptablePetsDetails = props => {
         <div className="row">
           <div className="col-md-8 col-sm-12">
             {isLoading ? (
-              <p>Loading Animal Services Pets...</p>
+              <p>Loading Adoptable Pets...</p>
             ) : (
               <div id="dg_main-content">
                 <PetDetail

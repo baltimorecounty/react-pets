@@ -36,7 +36,7 @@ const PetCard = props => {
         </div>
       </CardContent>
       <CardFooter className="text-right">
-        <Link to={`/petDetails/${animalId}`}>
+        <Link to={`/pets/${animalId}`}>
           <Button as="a" text="Details" href={url} />
         </Link>
       </CardFooter>

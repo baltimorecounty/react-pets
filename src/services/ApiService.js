@@ -13,7 +13,7 @@ const GetStatus = () =>
     .then(({ status }) => status === 200);
 
 /**
- * Get News Data from SiteExecutive structured content
+ * Get Pet Data from Service
  */
 const GetPets = (endPoint = "/hub/pets", status = "adoptable", petType = "") =>
   axios

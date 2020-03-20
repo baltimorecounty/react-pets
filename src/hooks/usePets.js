@@ -9,7 +9,7 @@ const usePets = endPoint => {
     GetPets(endPoint)
       .then(response => {
         const { records } = response;
-        records ? setPetItems([...records]) : setPetItems(response);
+        setPetItems(records ? [...records] : response);
       })
       .catch(() => {
         setHasError(true);

@@ -10,13 +10,13 @@ const PetsList = () => {
     <React.Fragment>
       <div className="container">
         {isLoading ? (
-          <p>Loading Baltimore County News...</p>
+          <p>Loading Adoptable Pets...</p>
         ) : (
           <>
             <div className="row">
               {petItems.length > 0 ? (
                 <FilterList
-                  title="Baltimore County Newsroom"
+                  title="Baltimore County Adoptable Pets"
                   apiEndpoint="/hub/pets"
                   items={petItems}
                   renderItem={props => (
@@ -26,7 +26,7 @@ const PetsList = () => {
                   )}
                 />
               ) : (
-                "Sorry, no news matches your search criteria. Please change your search term and try again"
+                "Sorry, no pets match your search criteria. Please change your search term and try again"
               )}
             </div>
           </>

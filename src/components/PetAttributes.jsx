@@ -30,7 +30,7 @@ const PetAttributes = props => {
         newValue = "Breed";
         break;
       case "Altered":
-        newValue = "Spayed/Neutered";
+        newValue = "Spayed / Neutered";
         break;
       case "Primary Color":
         newValue = "Color";
