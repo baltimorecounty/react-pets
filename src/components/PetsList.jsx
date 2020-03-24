@@ -124,26 +124,30 @@ const PetsList = () => {
             items={filterItems.filter(item => item.type === "sex")}
           />
         </div>
-        <div className="col-md-9 col-xs-12">
-          {hasFilteredResults ? (
-            <div className="col">
-              <FilterList
-                items={filteredPets.length > 0 ? filteredPets : records}
-                renderItem={props => (
-                  <div key={props.animalId}>
-                    <PetCard {...props} />
-                  </div>
-                )}
-              />
-            </div>
-          ) : (
-            <p>
-              {" "}
-              "Sorry, no pets match your filter criteria. Please change your
-              filter and try again"
-            </p>
-          )}
-        </div>
+        {isLoading ? (
+          <p>Loading Adoptable Pets...</p>
+        ) : (
+          <div className="col-md-9 col-xs-12">
+            {hasFilteredResults ? (
+              <div className="col">
+                <FilterList
+                  items={filteredPets.length > 0 ? filteredPets : records}
+                  renderItem={props => (
+                    <div key={props.animalId}>
+                      <PetCard {...props} />
+                    </div>
+                  )}
+                />
+              </div>
+            ) : (
+              <p>
+                {" "}
+                "Sorry, no pets match your filter criteria. Please change your
+                filter and try again"
+              </p>
+            )}
+          </div>
+        )}
       </div>
     </React.Fragment>
   );
