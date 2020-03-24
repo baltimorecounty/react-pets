@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import FilterList from "./FilterList";
 import PetCard from "./PetCard";
-import { PetItems } from "../files/PetsData";
+
 import CategoriesFilterCollapse from "./CategoriesFilterCollapse";
+import usePets from "../hooks/usePets";
 
 const PetsList = () => {
   const [filteredPets, setFilteredPets] = useState([]);
@@ -16,6 +17,10 @@ const PetsList = () => {
     { type: "sex", name: "Unknown", checked: false }
   ]);
   //TODO: These codes are only for april demo purpose only, once we have our service these code will be removed.
+
+  const [{ response, isLoading }] = usePets("/hub/pets");
+
+  const { records } = response;
 
   const attributesItemsCheck = (attributesItems, type, name) => {
     return attributesItems.find(
@@ -62,7 +67,7 @@ const PetsList = () => {
     name2 = retunValues[1];
 
     setIsFiltering(true);
-    let items = [...PetItems];
+    let items = [...records];
     for (const item of items) {
       var attributesItems = item.attributes;
 
@@ -123,7 +128,7 @@ const PetsList = () => {
           {hasFilteredResults ? (
             <div className="col">
               <FilterList
-                items={filteredPets.length > 0 ? filteredPets : PetItems}
+                items={filteredPets.length > 0 ? filteredPets : records}
                 renderItem={props => (
                   <div key={props.id}>
                     <PetCard {...props} />
