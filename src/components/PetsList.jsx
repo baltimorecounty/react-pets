@@ -49,22 +49,22 @@ const PetsList = () => {
     let howManySelected = 0;
     let type2 = "none";
     let name2 = "none";
-    var retunValues;
+    var returnValues;
     if (activeFilteredSpeciesTypes.length) {
       howManySelected = activeFilteredSexTypes.length;
-      retunValues = attributeLabelValue(
+      returnValues = attributeLabelValue(
         activeFilteredSexTypes[0],
         howManySelected
       );
     } else {
       howManySelected = activeFilteredSpeciesTypes.length;
-      retunValues = attributeLabelValue(
+      returnValues = attributeLabelValue(
         activeFilteredSpeciesTypes[0],
         howManySelected
       );
     }
-    type2 = retunValues[0];
-    name2 = retunValues[1];
+    type2 = returnValues[0];
+    name2 = returnValues[1];
 
     setIsFiltering(true);
     let items = [...records];
