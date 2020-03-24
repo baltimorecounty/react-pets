@@ -9,9 +9,9 @@ const PetsList = () => {
   const [filteredPets, setFilteredPets] = useState([]);
   const [isFiltering, setIsFiltering] = useState(false);
   const [filterItems, setFilterItems] = useState([
-    { type: "species", name: "Cat", checked: false },
-    { type: "species", name: "Dog", checked: false },
-    { type: "species", name: "Other", checked: false },
+    { type: "type", name: "Cat", checked: false },
+    { type: "type", name: "Dog", checked: false },
+    { type: "type", name: "Other", checked: false },
     { type: "sex", name: "Female", checked: false },
     { type: "sex", name: "Male", checked: false },
     { type: "sex", name: "Unknown", checked: false }
@@ -41,7 +41,7 @@ const PetsList = () => {
   const filterServiceList = itemUpdated => {
     let finalItems = [];
     const activeFilteredSpeciesTypes = itemUpdated.filter(
-      item => item.checked === true && item.type === "species"
+      item => item.checked === true && item.type === "type"
     );
     const activeFilteredSexTypes = itemUpdated.filter(
       item => item.checked === true && item.type === "sex"
@@ -115,7 +115,7 @@ const PetsList = () => {
             header="SPECIES"
             id="Popular-filter"
             onChange={handlePetFilterChange}
-            items={filterItems.filter(item => item.type === "species")}
+            items={filterItems.filter(item => item.type === "type")}
           />
           <CategoriesFilterCollapse
             header="SEX"
