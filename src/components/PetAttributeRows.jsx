@@ -17,7 +17,7 @@ const PetAttributeRows = props => {
     <Table className="table-fixed">
       <TableBody>
         <TableRow key={id}>
-          <TableHeadCell>Animal ID</TableHeadCell>
+          <TableHeadCell>ANIMAL ID</TableHeadCell>
           <TableCell>{id}</TableCell>
         </TableRow>
         <PetAttributes attributes={attributes} />
