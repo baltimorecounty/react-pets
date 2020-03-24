@@ -4,8 +4,8 @@ import PetSidebar from "../components/PetSidebar";
 import { PetItems } from "../files/PetsData";
 
 const AdoptablePetsDetails = props => {
-  const { id } = props.match.params;
-  const selectedPet = PetItems.find(item => item.id === id);
+  const { animalId } = props.match.params;
+  const selectedPet = PetItems.find(item => item.animalId === animalId);
   const {
     imageUrl,
     imageUrlAltText,
@@ -28,7 +28,7 @@ const AdoptablePetsDetails = props => {
                 aboutMe={aboutMe}
                 attributes={attributes}
                 animalName={animalName}
-                id={id}
+                animalId={animalId}
               />
             </div>
             {petsInformationAboutAdoption ? (

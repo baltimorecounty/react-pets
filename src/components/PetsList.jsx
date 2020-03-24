@@ -130,7 +130,7 @@ const PetsList = () => {
               <FilterList
                 items={filteredPets.length > 0 ? filteredPets : records}
                 renderItem={props => (
-                  <div key={props.id}>
+                  <div key={props.animalId}>
                     <PetCard {...props} />
                   </div>
                 )}

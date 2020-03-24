@@ -40,11 +40,7 @@ function App() {
     <React.Fragment>
       <Router>
         <Route exact path="/" component={PetsList} />
-        <Route
-          exact
-          path="/petDetails/:id"
-          component={AdoptablePetsDetails}
-        />
+        <Route exact path="/pets/:animalId" component={AdoptablePetsDetails} />
       </Router>
     </React.Fragment>
   );
