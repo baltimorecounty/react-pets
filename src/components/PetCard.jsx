@@ -11,13 +11,13 @@ import React from "react";
 
 const PetCard = props => {
   const { imageUrl, imageUrlAltText, animalName, id, attributes } = props;
-
+  
   return (
     <Card className="text-left">
       <h2>{animalName}</h2>
       <CardContent>
         <div className="row">
-          <div className="col-md-4 col-xs-12">
+          <div className="col-md-4 col-xs-12 col_padding">
             <PetThumbnail
               thumbnail={imageUrl}
               thumbnailAltText={imageUrlAltText}

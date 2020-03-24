@@ -21,7 +21,7 @@ const PetAttributes = props => {
     .filter(attribute => displayAttributes.includes(attribute.label))
     .map((item, index) => (
       <TableRow key={index}>
-        <TableHeadCell>{item.label}</TableHeadCell>
+        <TableHeadCell>{item.label.toUpperCase()}</TableHeadCell>
         {item.label === "Age" ? (
           <TableCell>
             <span>

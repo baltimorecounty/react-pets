@@ -12,12 +12,13 @@ import React from "react";
 
 const PetAttributeRows = props => {
   const { attributes, id } = props;
-
+   //let attributesToUpperCase = {attributes}.toUpperCase();
+   console.log(attributes);
   return (
     <Table className="table-fixed">
       <TableBody>
         <TableRow key={id}>
-          <TableHeadCell>Animal ID</TableHeadCell>
+          <TableHeadCell>ANIMAL ID</TableHeadCell>
           <TableCell>{id}</TableCell>
         </TableRow>
         <PetAttributes attributes={attributes} />
