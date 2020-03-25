@@ -2,7 +2,7 @@ import "@baltimorecounty/dotgov-components/lib/styles/dotgov.min.css";
 import "./App.css";
 import { Route, HashRouter as Router } from "react-router-dom";
 import PetsList from "./components/PetsList";
-import AdoptablePetsDetails from "./pages/AdoptablePetsDetails";
+import Pet from "./pages/Pet";
 import { Config } from "@baltimorecounty/javascript-utilities";
 import React from "react";
 
@@ -40,11 +40,7 @@ function App() {
     <React.Fragment>
       <Router>
         <Route exact path="/" component={PetsList} />
-        <Route
-          exact
-          path="/petDetails/:id"
-          component={AdoptablePetsDetails}
-        />
+        <Route exact path="/pets/:animalId" component={Pet} />
       </Router>
     </React.Fragment>
   );
