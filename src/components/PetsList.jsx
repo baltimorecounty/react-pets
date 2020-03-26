@@ -110,7 +110,9 @@ const PetsList = () => {
   return (
     <React.Fragment>
       <div className="row">
+        <div className="extraPadding">
         <div className="col-md-3 col-xs-12">
+          </div>
           <CategoriesFilterCollapse
             header="SPECIES"
             id="Popular-filter"
@@ -123,7 +125,7 @@ const PetsList = () => {
             onChange={handlePetFilterChange}
             items={filterItems.filter(item => item.type === "sex")}
           />
-        </div>
+        </div>  
         {isLoading ? (
           <p>Loading Adoptable Pets...</p>
         ) : (

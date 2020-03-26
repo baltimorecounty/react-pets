@@ -1,11 +1,19 @@
 .table th {
   font-weight: 700;
 }
-.dg_card ,
-  .dg_card__contect {
-    padding: 40px;
-  }
-
+.extraPadding {
+  padding-right: 40px;
+}
+.dg_card {
+  padding: 40px 40px 40px 20px;
+}
+.row {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+h2 {
+  padding-left: 20px;
+}
 
 .col-1,
 .col-2,
