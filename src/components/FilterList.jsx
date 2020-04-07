@@ -1,12 +1,45 @@
+import { Alert } from "@baltimorecounty/dotgov-components";
 import PropTypes from "prop-types";
 import React from "react";
+import usePets from "../hooks/usePets";
 
 const FilterList = ({
+  title = "",
   as: As = React.Fragment,
   items = [],
-  renderItem = props => <As {...props} />,
+  renderItem = (props) => <As {...props} />,
+  filters = [],
+  apiEndpoint,
   ...props
-}) => <As {...props}>{items.map(renderItem)}</As>;
+}) => {
+  const [{ hasError, response, isLoading }] = usePets(apiEndpoint);
+  const { records = [] } = response;
+
+  if (hasError) {
+    return (
+      <Alert className="status" type="error">
+        <p>
+          Unable to retrieve the list of {title}. Please try again in a couple
+          of minutes.
+        </p>
+      </Alert>
+    );
+  }
+
+  return (
+    <>
+      <div className="row filter-list">
+        {isLoading ? (
+          <p>Loading {title}...</p>
+        ) : (
+          <>
+            <As {...props}>{records.map(renderItem)}</As>
+          </>
+        )}
+      </div>
+    </>
+  );
+};
 
 FilterList.propTypes = {
   /** render the components container as this type of thing, can be another component or a string if it's a basic html element */
@@ -14,7 +47,7 @@ FilterList.propTypes = {
   /** list of data items to display */
   items: PropTypes.array,
   /** function that renders a component passed through*/
-  renderItem: PropTypes.func.isRequired
+  renderItem: PropTypes.func.isRequired,
 };
 
 export default FilterList;

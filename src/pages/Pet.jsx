@@ -1,18 +1,18 @@
-import React from "react";
 import PetDetail from "../components/PetDetail";
 import PetSidebar from "../components/PetSidebar";
+import React from "react";
 import usePets from "../hooks/usePets";
 
-const AdoptablePetsDetails = props => {
+const AdoptablePetsDetails = (props) => {
   const { animalId } = props.match.params;
-  const [{ response, isLoading }] = usePets(`/hub/pets/${animalId}`);
+  const [{ response, isLoading }] = usePets(`/hub/pets/pets/${animalId}`);
 
   const {
     imageUrl,
     imageUrlAltText,
     aboutMe,
     attributes,
-    animalName
+    animalName,
   } = response;
 
   var petsInformationAboutAdoption = window.pets.informationAbout;

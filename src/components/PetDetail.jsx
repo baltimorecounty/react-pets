@@ -11,6 +11,7 @@ const PetDetail = props => {
     animalName,
     animalId
   } = props;
+
   return (
     <div className="container">
       <h2>{animalName}</h2>

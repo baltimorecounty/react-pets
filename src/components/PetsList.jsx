@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import FilterList from "./FilterList";
-import PetCard from "./PetCard";
 
 import CategoriesFilterCollapse from "./CategoriesFilterCollapse";
+import FilterList from "./FilterList";
+import PetCard from "./PetCard";
 import usePets from "../hooks/usePets";
 
 const PetsList = () => {
@@ -14,17 +14,17 @@ const PetsList = () => {
     { type: "type", name: "Other", checked: false },
     { type: "sex", name: "Female", checked: false },
     { type: "sex", name: "Male", checked: false },
-    { type: "sex", name: "Unknown", checked: false }
+    { type: "sex", name: "Unknown", checked: false },
   ]);
   //TODO: These codes are only for april demo purpose only, once we have our service these code will be removed.
 
-  const [{ response, isLoading }] = usePets("/hub/pets");
+  const [{ response, isLoading }] = usePets("/hub/pets/pets");
 
   const { records } = response;
 
   const attributesItemsCheck = (attributesItems, type, name) => {
     return attributesItems.find(
-      x =>
+      (x) =>
         x.label.toLocaleLowerCase() === `${type}` &&
         x.value.toLocaleLowerCase() === `${name}`
     );
@@ -38,13 +38,13 @@ const PetsList = () => {
     return [type, name];
   };
 
-  const filterServiceList = itemUpdated => {
+  const filterServiceList = (itemUpdated) => {
     let finalItems = [];
     const activeFilteredSpeciesTypes = itemUpdated.filter(
-      item => item.checked === true && item.type === "type"
+      (item) => item.checked === true && item.type === "type"
     );
     const activeFilteredSexTypes = itemUpdated.filter(
-      item => item.checked === true && item.type === "sex"
+      (item) => item.checked === true && item.type === "sex"
     );
     let howManySelected = 0;
     let type2 = "none";
@@ -89,19 +89,17 @@ const PetsList = () => {
     setFilteredPets(finalItems);
   };
 
-  const handlePetFilterChange = changeEvent => {
+  const handlePetFilterChange = (changeEvent) => {
     setIsFiltering(false);
     const { checked, name } = changeEvent.target;
-    const itemUpdated = filterItems.map(item => {
+    const itemUpdated = filterItems.map((item) => {
       return item.name.toLocaleLowerCase() === name.toLocaleLowerCase()
         ? { ...item, checked: checked }
         : item;
     });
     setFilterItems(itemUpdated);
-    const checkedCount = itemUpdated.filter(item => item.checked).length;
-    (checkedCount === 0 || checkedCount === itemUpdated.length
-    ? false
-    : true)
+    const checkedCount = itemUpdated.filter((item) => item.checked).length;
+    (checkedCount === 0 || checkedCount === itemUpdated.length ? false : true)
       ? filterServiceList(itemUpdated)
       : setFilteredPets([]);
   };
@@ -110,37 +108,34 @@ const PetsList = () => {
   return (
     <React.Fragment>
       <div className="row">
-        <div className="extraPadding">
         <div className="col-md-3 col-xs-12">
-          </div>
           <CategoriesFilterCollapse
             header="SPECIES"
             id="Popular-filter"
             onChange={handlePetFilterChange}
-            items={filterItems.filter(item => item.type === "type")}
+            items={filterItems.filter((item) => item.type === "type")}
           />
           <CategoriesFilterCollapse
             header="SEX"
             id="Popular-filter"
             onChange={handlePetFilterChange}
-            items={filterItems.filter(item => item.type === "sex")}
+            items={filterItems.filter((item) => item.type === "sex")}
           />
-        </div>  
+        </div>
+
         {isLoading ? (
           <p>Loading Adoptable Pets...</p>
         ) : (
           <div className="col-md-9 col-xs-12">
             {hasFilteredResults ? (
-              <div className="col">
-                <FilterList
-                  items={filteredPets.length > 0 ? filteredPets : records}
-                  renderItem={props => (
-                    <div key={props.animalId}>
-                      <PetCard {...props} />
-                    </div>
-                  )}
-                />
-              </div>
+              <FilterList
+                items={filteredPets.length > 0 ? filteredPets : records}
+                renderItem={(props) => (
+                  <div key={props.animalId}>
+                    <PetCard {...props} />
+                  </div>
+                )}
+              />
             ) : (
               <p>
                 {" "}

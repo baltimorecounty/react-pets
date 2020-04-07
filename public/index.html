@@ -10,6 +10,11 @@
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://beta.baltimorecountymd.gov/sebin/j/e/dotgov.min.css"
+    />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -31,13 +36,15 @@
       window.pets = {
         informationAbout:
           "Web Services needs to add something about adoptable pets",
-        petStatus: "adoptable"
+        petStatus: "adoptable",
       };
     </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div class="container">
+      <div id="root"></div>
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
