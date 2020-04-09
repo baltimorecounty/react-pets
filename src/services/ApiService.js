@@ -28,4 +28,13 @@ const GetPets = (
     )
     .then(({ status, data }) => (status === 200 ? data : []));
 
-export { GetStatus, GetPets };
+/**
+ * Get a pet by accela id
+ * @param {string} key unique key used by react-query
+ * @param {object} object
+ * @param {object} object.animalId unique id for a given animal
+ */
+const GetPet = (key, { animalId }) =>
+  axios.get(`${getValue("apiRoot")}/${animalId}`).then((resp) => resp.data);
+
+export { GetStatus, GetPets, GetPet };
