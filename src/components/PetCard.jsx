@@ -1,22 +1,24 @@
 import {
+  Button,
   Card,
   CardContent,
   CardFooter,
-  Button
 } from "@baltimorecounty/dotgov-components";
-import PetAttributeRows from "./PetAttributeRows";
+
 import { Link } from "react-router-dom";
+import PetAttributeRows from "./PetAttributeRows";
 import PetThumbnail from "./PetThumbnail";
 import React from "react";
 
-const PetCard = props => {
+const PetCard = (props) => {
   const {
     imageUrl,
     imageUrlAltText,
     animalName,
     animalId,
     attributes,
-    url
+    url,
+    gender,
   } = props;
 
   return (
@@ -31,7 +33,11 @@ const PetCard = props => {
             />
           </div>
           <div className="col-md-8 col-xs-12">
-            <PetAttributeRows attributes={attributes} animalId={animalId} />
+            <PetAttributeRows
+              attributes={attributes}
+              animalId={animalId}
+              gender={gender}
+            />
           </div>
         </div>
       </CardContent>
