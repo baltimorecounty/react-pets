@@ -1,39 +1,41 @@
-import FilterList from "./FilterList";
+import { Config } from "@baltimorecounty/javascript-utilities";
+import { FilterList } from "@baltimorecounty/react-filter-list";
 import PetCard from "./PetCard";
 import React from "react";
-import usePets from "../hooks/usePets";
+
+const { getValue } = Config;
 
 const PetsList = () => {
-  const apiEndpoint="/hub/pets/pets"
-  const [{ response, isLoading }] = usePets(apiEndpoint);
-  const { records } = response;
+  const filters = [
+    {
+      targetApiField: "petType",
+      displayName: "Species",
+      options: [
+        { value: "dog", label: "Dog" },
+        { value: "cat", label: "Cat" },
+        { value: "other", label: "Other" },
+      ],
+    },
+    {
+      targetApiField: "gender",
+      displayName: "Gender",
+      options: [
+        { value: "male", label: "Male" },
+        { value: "female", label: "Female" },
+        { value: "unknown", label: "Unknown" },
+      ],
+    },
+  ];
+
   return (
-    <React.Fragment>
-      <div className="container">
-        {isLoading ? (
-          <p>Loading Adoptable Pets...</p>
-        ) : (
-          <>
-            <div className="row">
-              {records.length > 0 ? (
-                <FilterList
-                  title="Adoptable Pets"
-                  apiEndpoint={apiEndpoint}
-                  items={records}
-                  renderItem={props => (
-                    <div key={props.animalId}>
-                      <PetCard {...props} />
-                    </div>
-                  )}
-                />
-              ) : (
-                "Sorry, no pets match your search criteria. Please change your search term and try again"
-              )}
-            </div>
-          </>
-        )}
-      </div>
-    </React.Fragment>
+    <FilterList
+      title="Adoptable Pets"
+      filters={filters}
+      apiEndpoint={`${getValue(
+        "apiRoot"
+      )}?status=Adoptable&recordsPerPage=1000`}
+      renderItem={(props) => <PetCard {...props} />}
+    />
   );
 };
 

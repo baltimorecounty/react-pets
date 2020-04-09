@@ -1,36 +1,40 @@
 import "@baltimorecounty/dotgov-components/lib/styles/dotgov.min.css";
 import "./App.css";
+
 import { Route, HashRouter as Router } from "react-router-dom";
-import PetsList from "./components/PetsList";
-import Pet from "./pages/Pet";
+
 import { Config } from "@baltimorecounty/javascript-utilities";
+import Pet from "./pages/Pet";
+import PetsList from "./components/PetsList";
 import React from "react";
 
 const { setConfig } = Config;
 
-const testApiRoot = "https://testservices.baltimorecountymd.gov/api";
-const prodApiRoot = "https://services.baltimorecountymd.gov/api";
+const initialPetsEndpoint = "api/hub/pets/pets";
+
+const testApiRoot = `https://testservices.baltimorecountymd.gov/${initialPetsEndpoint}`;
+const prodApiRoot = `https://services.baltimorecountymd.gov/${initialPetsEndpoint}`;
 
 // HACK - the Config utiltiy does not account for beta.
 // TODO: This will need to be addressed when we get closer to launch
 const localApiRoot =
   window.location.hostname.indexOf("beta") > -1
     ? testApiRoot
-    : "//localhost:54727/api";
+    : `//localhost:54727/${initialPetsEndpoint}`;
 
 const configValues = {
   local: {
-    apiRoot: localApiRoot
+    apiRoot: localApiRoot,
   },
   development: {
-    apiRoot: testApiRoot
+    apiRoot: testApiRoot,
   },
   staging: {
-    apiRoot: testApiRoot
+    apiRoot: testApiRoot,
   },
   production: {
-    apiRoot: prodApiRoot
-  }
+    apiRoot: prodApiRoot,
+  },
 };
 
 setConfig(configValues);

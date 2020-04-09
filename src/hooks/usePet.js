@@ -1,28 +1,32 @@
 import { useEffect, useState } from "react";
-import { GetPets } from "../services/ApiService";
 
-const usePets = endPoint => {
+import { GetPet } from "../services/ApiService";
+
+const usePet = (animalId) => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
-  const [response, setResponse] = useState([]);
+  const [animal, setAnimal] = useState();
+
   useEffect(() => {
-    GetPets(endPoint)
-      .then(response => setResponse(response))
+    GetPet(animalId)
+      .then((animal) => {
+        setAnimal(animal);
+      })
       .catch(() => {
         setHasError(true);
       })
       .finally(() => {
         setIsLoading(false);
       });
-  }, [endPoint]);
+  }, [animalId]);
 
   return [
     {
+      animal,
       hasError,
-      response,
-      isLoading
-    }
+      isLoading,
+    },
   ];
 };
 
-export default usePets;
+export default usePet;
