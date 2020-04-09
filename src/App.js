@@ -10,8 +10,7 @@ import React from "react";
 
 const { setConfig } = Config;
 
-const initialPetsEndpoint =
-  "api/hub/pets/pets?status=Adoptable&recordsPerPage=1000";
+const initialPetsEndpoint = "api/hub/pets/pets";
 
 const testApiRoot = `https://testservices.baltimorecountymd.gov/${initialPetsEndpoint}`;
 const prodApiRoot = `https://services.baltimorecountymd.gov/${initialPetsEndpoint}`;
