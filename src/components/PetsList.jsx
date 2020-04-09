@@ -31,7 +31,9 @@ const PetsList = () => {
     <FilterList
       title="Adoptable Pets"
       filters={filters}
-      apiEndpoint={getValue("apiRoot")}
+      apiEndpoint={`${getValue(
+        "apiRoot"
+      )}?status=Adoptable&recordsPerPage=1000`}
       renderItem={(props) => <PetCard {...props} />}
     />
   );
