@@ -1,19 +1,33 @@
-import React from "react";
 import PetDetail from "../components/PetDetail";
 import PetSidebar from "../components/PetSidebar";
-import usePets from "../hooks/usePets";
+import React from "react";
+import usePet from "../hooks/usePet";
 
-const AdoptablePetsDetails = props => {
+const AdoptablePetsDetails = (props) => {
   const { animalId } = props.match.params;
-  const [{ response, isLoading }] = usePets(`/hub/pets/pets/${animalId}`);
+  const [{ hasError, animal, isLoading }] = usePet(animalId);
+
+  if (!animal) {
+    return <p>Loading information for {animalId}...</p>;
+  }
+
+  if (hasError) {
+    return (
+      <p>
+        We could not load information for {animalId}. Please try again in a few
+        minutes.
+      </p>
+    );
+  }
 
   const {
     imageUrl,
     imageUrlAltText,
     aboutMe,
-    attributes,
-    animalName
-  } = response;
+    attributes = [],
+    animalName,
+    gender,
+  } = animal;
 
   var petsInformationAboutAdoption = window.pets.informationAbout;
 
@@ -33,6 +47,7 @@ const AdoptablePetsDetails = props => {
                   attributes={attributes}
                   animalName={animalName}
                   animalId={animalId}
+                  gender={gender}
                 />
               </div>
             )}

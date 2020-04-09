@@ -1,4 +1,5 @@
 import {
+  Button,
   Card,
   CardContent,
   CardFooter,
@@ -10,7 +11,14 @@ import PetThumbnail from "./PetThumbnail";
 import React from "react";
 
 const PetCard = (props) => {
-  const { imageUrl, imageUrlAltText, animalName, animalId, attributes } = props;
+  const {
+    imageUrl,
+    imageUrlAltText,
+    animalName,
+    animalId,
+    attributes,
+    gender,
+  } = props;
 
   return (
     <Card className="text-left">
@@ -24,7 +32,11 @@ const PetCard = (props) => {
             />
           </div>
           <div className="col-md-8 col-xs-12">
-            <PetAttributeRows attributes={attributes} animalId={animalId} />
+            <PetAttributeRows
+              attributes={attributes}
+              animalId={animalId}
+              gender={gender}
+            />
           </div>
         </div>
       </CardContent>

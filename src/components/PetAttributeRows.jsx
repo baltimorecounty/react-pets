@@ -3,15 +3,15 @@ import {
   TableBody,
   TableCell,
   TableHeadCell,
-  TableRow
+  TableRow,
 } from "@baltimorecounty/dotgov-components";
 
 import PetAttributes from "./PetAttributes";
 import PropTypes from "prop-types";
 import React from "react";
 
-const PetAttributeRows = props => {
-  const { attributes, animalId } = props;
+const PetAttributeRows = (props) => {
+  const { attributes, animalId, gender } = props;
 
   return (
     <Table className="table-fixed">
@@ -19,6 +19,10 @@ const PetAttributeRows = props => {
         <TableRow key={animalId}>
           <TableHeadCell>Animal Id</TableHeadCell>
           <TableCell>{animalId}</TableCell>
+        </TableRow>
+        <TableRow key={gender}>
+          <TableHeadCell>Gender</TableHeadCell>
+          <TableCell>{gender}</TableCell>
         </TableRow>
         <PetAttributes attributes={attributes} />
       </TableBody>
@@ -28,7 +32,7 @@ const PetAttributeRows = props => {
 
 PetAttributeRows.propTypes = {
   /** List of Attributes to display. */
-  attributes: PropTypes.array.isRequired
+  attributes: PropTypes.array.isRequired,
 };
 
 export default PetAttributeRows;
