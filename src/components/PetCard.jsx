@@ -1,5 +1,4 @@
 import {
-  Button,
   Card,
   CardContent,
   CardFooter,
@@ -17,7 +16,6 @@ const PetCard = (props) => {
     animalName,
     animalId,
     attributes,
-    url,
     gender,
   } = props;
 
@@ -42,8 +40,8 @@ const PetCard = (props) => {
         </div>
       </CardContent>
       <CardFooter className="text-right">
-        <Link to={`/pets/${animalId}`}>
-          <Button as="a" text="Details" href={url} />
+        <Link className="dg_button" to={`/pets/${animalId}`}>
+          Details
         </Link>
       </CardFooter>
     </Card>
