@@ -1,6 +1,7 @@
 import PetDetail from "../components/PetDetail";
 import PetSidebar from "../components/PetSidebar";
 import React from "react";
+import ReactHtmlParser from "react-html-parser";
 import usePet from "../hooks/usePet";
 
 const AdoptablePetsDetails = (props) => {
@@ -29,7 +30,9 @@ const AdoptablePetsDetails = (props) => {
     gender,
   } = animal;
 
-  var petsInformationAboutAdoption = window.pets.informationAbout;
+  var petsInformationAboutAdoption = ReactHtmlParser(
+    window.pets.informationAbout.replace("{animalId}", animalId)
+  );
 
   return (
     <div className="dg_internal-template">
