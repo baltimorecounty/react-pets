@@ -39,11 +39,36 @@ const configValues = {
 
 setConfig(configValues);
 
+const filters = [
+  {
+    targetApiField: "petType",
+    displayName: "Species",
+    options: [
+      { value: "dog", label: "Dog" },
+      { value: "cat", label: "Cat" },
+      { value: "other", label: "Other" },
+    ],
+  },
+  {
+    targetApiField: "gender",
+    displayName: "Gender",
+    options: [
+      { value: "male", label: "Male" },
+      { value: "female", label: "Female" },
+      { value: "unknown", label: "Unknown" },
+    ],
+  },
+];
+
 function App() {
   return (
     <React.Fragment>
       <Router>
-        <Route exact path="/" component={PetsList} />
+        <Route
+          exact
+          path="/"
+          component={(props) => <PetsList filters={filters} {...props} />}
+        />
         <Route exact path="/pets/:animalId" component={Pet} />
       </Router>
     </React.Fragment>
