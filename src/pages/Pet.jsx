@@ -6,7 +6,10 @@ import usePet from "../hooks/usePet";
 
 const AdoptablePetsDetails = (props) => {
   const { animalId } = props.match.params;
-  const [{ hasError, animal, isLoading }] = usePet(animalId);
+  const [{ hasError, animal, isLoading }] = usePet(
+    animalId,
+    window.pets.petStatus
+  );
 
   if (!animal) {
     return <p>Loading information for {animalId}...</p>;

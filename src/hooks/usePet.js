@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 
 import { GetPet } from "../services/ApiService";
 
-const usePet = (animalId) => {
+const usePet = (animalId, status) => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const [animal, setAnimal] = useState();
 
   useEffect(() => {
-    GetPet(animalId)
+    GetPet(animalId, status)
       .then((animal) => {
         setAnimal(animal);
       })
@@ -18,7 +18,7 @@ const usePet = (animalId) => {
       .finally(() => {
         setIsLoading(false);
       });
-  }, [animalId]);
+  }, [animalId, status]);
 
   return [
     {
