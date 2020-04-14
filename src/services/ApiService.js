@@ -34,7 +34,9 @@ const GetPets = (
  * @param {object} object
  * @param {object} object.animalId unique id for a given animal
  */
-const GetPet = (animalId) =>
-  axios.get(`${getValue("apiRoot")}/${animalId}`).then((resp) => resp.data);
+const GetPet = (animalId, status) =>
+  axios
+    .get(`${getValue("apiRoot")}/${animalId}?status=${status}`)
+    .then((resp) => resp.data);
 
 export { GetStatus, GetPets, GetPet };
