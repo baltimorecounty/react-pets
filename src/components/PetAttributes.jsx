@@ -2,30 +2,25 @@ import React from "react";
 import {
   TableCell,
   TableHeadCell,
-  TableRow
+  TableRow,
 } from "@baltimorecounty/dotgov-components";
 
-const PetAttributes = props => {
+const PetAttributes = (props) => {
   const { attributes } = props;
 
   var displayAttributes = [
-    "Type",
     "Primary Breed",
     "Primary Color",
     "Sex",
     "Weight",
     "Age",
     "Altered",
-    "Shelter Arrival Date"
   ];
 
   //TODO: Possibly needs to be added to the service. But for now this is where this lives
-  const ConvertToFriendlyNames = value => {
+  const ConvertToFriendlyNames = (value) => {
     var newValue = "";
     switch (value) {
-      case "Type":
-        newValue = "Species";
-        break;
       case "Primary Breed":
         newValue = "Breed";
         break;
@@ -42,21 +37,22 @@ const PetAttributes = props => {
   };
 
   const PetAttributeRows = attributes
-    .filter(attribute => displayAttributes.includes(attribute.label))
+    .filter((attribute) => displayAttributes.includes(attribute.label))
     .map((item, index) => (
       <TableRow key={index}>
         <TableHeadCell>{ConvertToFriendlyNames(item.label)}</TableHeadCell>
         {item.label === "Age" ? (
           <TableCell>
             <span>
-              {item.value} {attributes.find(x => x.label === "Age Unit").value}
+              {item.value}{" "}
+              {attributes.find((x) => x.label === "Age Unit").value}
             </span>
           </TableCell>
         ) : item.label === "Weight" ? (
           <TableCell>
             <span>
               {item.value}
-              {attributes.find(x => x.label === "Weight Unit").value}
+              {attributes.find((x) => x.label === "Weight Unit").value}
             </span>
           </TableCell>
         ) : (
