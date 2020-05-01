@@ -14,7 +14,7 @@ const PetDetail = (props) => {
     dateAdoptedRedeemed,
     petType,
   } = props;
-  console.log(props);
+
   return (
     <div className="container">
       <h2>{animalName}</h2>
