@@ -5,23 +5,13 @@ import {
   TableHeadCell,
   TableRow,
 } from "@baltimorecounty/dotgov-components";
-
+import { ReturnFormattedDate } from "../utilities/DateFunctions";
 import PetAttributes from "./PetAttributes";
 import PropTypes from "prop-types";
 import React from "react";
 
-const options = {
-  year: "numeric",
-  month: "numeric",
-  day: "numeric",
-};
-
 const PetAttributeRows = (props) => {
   const { attributes, animalId, gender, petType, dateAdoptedRedeemed } = props;
-  const shelterArrivalDate = new Date(dateAdoptedRedeemed).toLocaleDateString(
-    "en-US",
-    options
-  );
 
   return (
     <Table className="table-fixed">
@@ -41,7 +31,7 @@ const PetAttributeRows = (props) => {
         <PetAttributes attributes={attributes} />
         <TableRow key={dateAdoptedRedeemed}>
           <TableHeadCell>Shelter Arrival Date</TableHeadCell>
-          <TableCell>{shelterArrivalDate}</TableCell>
+          <TableCell>{ReturnFormattedDate(dateAdoptedRedeemed)}</TableCell>
         </TableRow>
       </TableBody>
     </Table>
