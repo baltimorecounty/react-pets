@@ -17,8 +17,6 @@ const PetAttributes = (props) => {
     "Altered",
   ];
 
-  //TODO: Possibly needs to be added to the service. But for now this is where this lives
-
   const PetAttributeRows = attributes
     .filter((attribute) => displayAttributes.includes(attribute.label))
     .map((item, index) => (
