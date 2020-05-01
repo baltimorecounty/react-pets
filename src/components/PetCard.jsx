@@ -17,6 +17,8 @@ const PetCard = (props) => {
     animalId,
     attributes,
     gender,
+    dateAdoptedRedeemed,
+    petType,
   } = props;
 
   return (
@@ -28,6 +30,8 @@ const PetCard = (props) => {
             <PetThumbnail
               thumbnail={imageUrl}
               thumbnailAltText={imageUrlAltText}
+              animalName={animalName}
+              gender={gender}
             />
           </div>
           <div className="col-md-8 col-xs-12">
@@ -35,6 +39,8 @@ const PetCard = (props) => {
               attributes={attributes}
               animalId={animalId}
               gender={gender}
+              dateAdoptedRedeemed={dateAdoptedRedeemed}
+              petType={petType}
             />
           </div>
         </div>

@@ -11,6 +11,8 @@ const PetDetail = (props) => {
     animalName,
     animalId,
     gender,
+    dateAdoptedRedeemed,
+    petType,
   } = props;
 
   return (
@@ -24,6 +26,8 @@ const PetDetail = (props) => {
           <PetThumbnail
             thumbnail={imageUrl}
             thumbnailAltText={imageUrlAltText}
+            animalName={animalName}
+            gender={gender}
           />
         </div>
       </div>
@@ -33,6 +37,8 @@ const PetDetail = (props) => {
             attributes={attributes}
             animalId={animalId}
             gender={gender}
+            dateAdoptedRedeemed={dateAdoptedRedeemed}
+            petType={petType}
           />
         </div>
       </div>
