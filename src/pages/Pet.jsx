@@ -31,6 +31,8 @@ const AdoptablePetsDetails = (props) => {
     attributes = [],
     animalName,
     gender,
+    dateAdoptedRedeemed,
+    petType,
   } = animal;
 
   var petsInformationAboutAdoption = ReactHtmlParser(
@@ -54,6 +56,8 @@ const AdoptablePetsDetails = (props) => {
                   animalName={animalName}
                   animalId={animalId}
                   gender={gender}
+                  dateAdoptedRedeemed={dateAdoptedRedeemed}
+                  petType={petType}
                 />
               </div>
             )}

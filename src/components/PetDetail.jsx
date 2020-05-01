@@ -1,5 +1,6 @@
 import PetAttributeRows from "./PetAttributeRows";
 import PetThumbnail from "./PetThumbnail";
+import { FormatDate } from "../utilities/DateFunctions";
 import React from "react";
 
 const PetDetail = (props) => {
@@ -37,7 +38,7 @@ const PetDetail = (props) => {
             attributes={attributes}
             animalId={animalId}
             gender={gender}
-            dateAdoptedRedeemed={dateAdoptedRedeemed}
+            dateAdoptedRedeemed={FormatDate(dateAdoptedRedeemed)}
             petType={petType}
           />
         </div>

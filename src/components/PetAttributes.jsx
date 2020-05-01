@@ -4,7 +4,7 @@ import {
   TableHeadCell,
   TableRow,
 } from "@baltimorecounty/dotgov-components";
-
+import { ConvertToFriendlyNames } from "../utilities/ConvertToFriendlyNames";
 const PetAttributes = (props) => {
   const { attributes } = props;
 
@@ -16,25 +16,6 @@ const PetAttributes = (props) => {
     "Age",
     "Altered",
   ];
-
-  //TODO: Possibly needs to be added to the service. But for now this is where this lives
-  const ConvertToFriendlyNames = (value) => {
-    var newValue = "";
-    switch (value) {
-      case "Primary Breed":
-        newValue = "Breed";
-        break;
-      case "Altered":
-        newValue = "Spayed / Neutered";
-        break;
-      case "Primary Color":
-        newValue = "Color";
-        break;
-      default:
-        newValue = value;
-    }
-    return newValue;
-  };
 
   const PetAttributeRows = attributes
     .filter((attribute) => displayAttributes.includes(attribute.label))
