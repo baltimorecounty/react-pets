@@ -1,7 +1,7 @@
 import React from "react";
 
 const PetThumbnail = ({ thumbnail, thumbnailAltText, animalName, gender }) =>
-  thumbnail ? (
+  !thumbnail ? (
     <img
       style={{ maxWidth: "100%" }}
       src={thumbnail}
@@ -12,7 +12,7 @@ const PetThumbnail = ({ thumbnail, thumbnailAltText, animalName, gender }) =>
       }
     />
   ) : (
-    <i className="far fa-newspaper fa-3x dg_news_icon"></i>
+    <i className="fa fa-paw fa-3x"></i>
   );
 
 export default PetThumbnail;
