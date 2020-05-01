@@ -3,8 +3,18 @@ import PetThumbnail from "./PetThumbnail";
 import React from "react";
 
 const PetDetail = (props) => {
-  const { imageUrl, aboutMe, attributes, animalName, animalId, gender } = props;
-
+  const {
+    imageUrl,
+    imageUrlAltText,
+    aboutMe,
+    attributes,
+    animalName,
+    animalId,
+    gender,
+    dateAdoptedRedeemed,
+    petType,
+  } = props;
+  console.log(props);
   return (
     <div className="container">
       <h2>{animalName}</h2>
@@ -15,6 +25,7 @@ const PetDetail = (props) => {
         <div className="col-md-4 col-xs-12">
           <PetThumbnail
             thumbnail={imageUrl}
+            thumbnailAltText={imageUrlAltText}
             animalName={animalName}
             gender={gender}
           />
@@ -26,6 +37,8 @@ const PetDetail = (props) => {
             attributes={attributes}
             animalId={animalId}
             gender={gender}
+            dateAdoptedRedeemed={dateAdoptedRedeemed}
+            petType={petType}
           />
         </div>
       </div>

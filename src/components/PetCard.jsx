@@ -12,6 +12,7 @@ import React from "react";
 const PetCard = (props) => {
   const {
     imageUrl,
+    imageUrlAltText,
     animalName,
     animalId,
     attributes,
@@ -28,6 +29,7 @@ const PetCard = (props) => {
           <div className="col-md-4 col-xs-12">
             <PetThumbnail
               thumbnail={imageUrl}
+              thumbnailAltText={imageUrlAltText}
               animalName={animalName}
               gender={gender}
             />
