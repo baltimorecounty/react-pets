@@ -1,7 +1,7 @@
 import React from "react";
 
 const PetThumbnail = ({ thumbnail, thumbnailAltText, animalName, gender }) =>
-  !thumbnail ? (
+  thumbnail ? (
     <img
       style={{ maxWidth: "100%" }}
       src={thumbnail}
