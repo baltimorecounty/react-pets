@@ -5,7 +5,7 @@ import {
   TableHeadCell,
   TableRow,
 } from "@baltimorecounty/dotgov-components";
-import { ReturnFormattedDate } from "../utilities/DateFunctions";
+import { FormatDate } from "../utilities/DateFunctions";
 import PetAttributes from "./PetAttributes";
 import PropTypes from "prop-types";
 import React from "react";
@@ -31,7 +31,7 @@ const PetAttributeRows = (props) => {
         <PetAttributes attributes={attributes} />
         <TableRow key={dateAdoptedRedeemed}>
           <TableHeadCell>Shelter Arrival Date</TableHeadCell>
-          <TableCell>{ReturnFormattedDate(dateAdoptedRedeemed)}</TableCell>
+          <TableCell>{FormatDate(dateAdoptedRedeemed)}</TableCell>
         </TableRow>
       </TableBody>
     </Table>
