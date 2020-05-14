@@ -6,10 +6,8 @@ import usePet from "../hooks/usePet";
 
 const AdoptablePetsDetails = (props) => {
   const { animalId } = props.match.params;
-  const [{ hasError, animal, isLoading }] = usePet(
-    animalId,
-    window.pets.petStatus
-  );
+  const petStatus = window.pets.petStatus;
+  const [{ hasError, animal, isLoading }] = usePet(animalId, petStatus);
 
   if (!animal) {
     return <p>Loading information for {animalId}...</p>;
@@ -45,7 +43,7 @@ const AdoptablePetsDetails = (props) => {
         <div className="row">
           <div className="col-md-8 col-sm-12">
             {isLoading ? (
-              <p>Loading Adoptable Pets...</p>
+              <p>{`Loading ${petStatus} Pets...`}</p>
             ) : (
               <div id="dg_main-content">
                 <PetDetail
