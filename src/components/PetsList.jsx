@@ -4,7 +4,9 @@ import PetCard from "./PetCard";
 import React from "react";
 
 const { getValue } = Config;
-const petStatus = window.pets.petStatus;
+const {
+  pets: { petStatus = console.error("Please define a pet status") || "" } = {},
+} = window;
 
 const PetsList = ({ filters = [] }) => (
   <FilterList
