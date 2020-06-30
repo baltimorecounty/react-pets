@@ -1,6 +1,7 @@
+import React, { useEffect } from "react";
+
 import PetDetail from "../components/PetDetail";
 import PetSidebar from "../components/PetSidebar";
-import React from "react";
 import ReactHtmlParser from "react-html-parser";
 import usePet from "../hooks/usePet";
 
@@ -8,6 +9,10 @@ const AdoptablePetsDetails = (props) => {
   const { animalId } = props.match.params;
   const petStatus = window.pets.petStatus;
   const [{ hasError, animal, isLoading }] = usePet(animalId, petStatus);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
 
   if (!animal) {
     return <p>Loading information for {animalId}...</p>;

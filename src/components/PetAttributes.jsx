@@ -1,10 +1,12 @@
-import React from "react";
 import {
   TableCell,
   TableHeadCell,
   TableRow,
 } from "@baltimorecounty/dotgov-components";
+
 import { ConvertToFriendlyNames } from "../utilities/ConvertToFriendlyNames";
+import React from "react";
+
 const PetAttributes = (props) => {
   const { attributes } = props;
 
@@ -18,29 +20,42 @@ const PetAttributes = (props) => {
   ];
 
   const PetAttributeRows = attributes
-    .filter((attribute) => displayAttributes.includes(attribute.label))
-    .map((item, index) => (
-      <TableRow key={index}>
-        <TableHeadCell>{ConvertToFriendlyNames(item.label)}</TableHeadCell>
-        {item.label === "Age" ? (
-          <TableCell>
-            <span>
-              {item.value}{" "}
-              {attributes.find((x) => x.label === "Age Unit").value}
-            </span>
-          </TableCell>
-        ) : item.label === "Weight" ? (
-          <TableCell>
-            <span>
-              {item.value}
-              {attributes.find((x) => x.label === "Weight Unit").value}
-            </span>
-          </TableCell>
-        ) : (
-          <TableCell>{item.value} </TableCell>
-        )}
-      </TableRow>
-    ));
+    .filter(
+      (attribute) =>
+        displayAttributes.includes(attribute.label) && attribute.value
+    )
+    .map((item, index) => {
+      const { value: weight = "" } = attributes.find(
+        (x) => x.label === "Weight Unit"
+      );
+      const { value: age = "" } = attributes.find(
+        (x) => x.label === "Age Unit"
+      );
+
+      return (
+        <TableRow key={index}>
+          <TableHeadCell>{ConvertToFriendlyNames(item.label)}</TableHeadCell>
+          {item.label === "Age" && age && (
+            <TableCell>
+              <span>
+                {item.value} {age}
+              </span>
+            </TableCell>
+          )}
+          {item.label === "Weight" && weight && (
+            <TableCell>
+              <span>
+                {item.value} {weight}
+              </span>
+            </TableCell>
+          )}
+          {item.label.indexOf("Weight") === -1 &&
+            item.label.indexOf("Age") === -1 && (
+              <TableCell>{item.value} </TableCell>
+            )}
+        </TableRow>
+      );
+    });
 
   return PetAttributeRows;
 };
