@@ -41,6 +41,15 @@ setConfig(configValues);
 
 const filters = [
   {
+    targetApiField: "status",
+    value: window.pets.petStatus,
+  },
+
+  {
+    targetApiField: "recordsPerPage",
+    value: 1000,
+  },
+  {
     targetApiField: "petType",
     displayName: "Species",
     options: [

@@ -12,9 +12,7 @@ const PetsList = ({ filters = [] }) => (
   <FilterList
     title={`${petStatus} Pets`}
     filters={filters}
-    apiEndpoint={`${getValue(
-      "apiRoot"
-    )}?status=${petStatus}&recordsPerPage=1000`}
+    apiEndpoint={`${getValue("apiRoot")}`}
     renderItem={(props) => <PetCard {...props} />}
   />
 );
