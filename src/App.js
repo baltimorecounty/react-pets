@@ -41,6 +41,17 @@ setConfig(configValues);
 
 const filters = [
   {
+    targetApiField: "status",
+    value:
+      window.pets.petStatus ||
+      console.error("You must provide a pets.petStatus."),
+  },
+
+  {
+    targetApiField: "recordsPerPage",
+    value: 1000,
+  },
+  {
     targetApiField: "petType",
     displayName: "Species",
     options: [
