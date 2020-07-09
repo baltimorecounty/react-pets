@@ -42,7 +42,9 @@ setConfig(configValues);
 const filters = [
   {
     targetApiField: "status",
-    value: window.pets.petStatus,
+    value:
+      window.pets.petStatus ||
+      console.error("You must provide a pets.petStatus."),
   },
 
   {
