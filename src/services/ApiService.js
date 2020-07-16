@@ -22,7 +22,7 @@ const GetPets = (
 ) =>
   axios
     .get(
-      `${getValue("apiRoot")}${endPoint}?status=${status}&recordsPerPage=1000${
+      `${getValue("apiRoot")}${endPoint}?status=${status}&recordsPerPage=10${
         petType ? `&petType=${petType}` : ""
       }`
     )
