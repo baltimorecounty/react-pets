@@ -1,6 +1,6 @@
 {
   "name": "react-pets",
-  "version": "0.1.0",
+  "version": "1.0.19",
   "private": true,
   "dependencies": {
     "@baltimorecounty/dotgov-components": "^0.1.106",
