@@ -57,7 +57,7 @@ const PetDetail = (props) => {
               <ul>
                 <li>
                   <SocialMediaButton
-                    id="twitterButton"
+                    id="twitterButtonPets"
                     className="dg_Button"
                     title="Share on Twitter"
                     href={shareTwitterText}
@@ -67,7 +67,7 @@ const PetDetail = (props) => {
                 </li>
                 <li>
                   <SocialMediaButton
-                    id="facebookButton"
+                    id="facebookButtonPets"
                     href={shareFaceBookText}
                     target="_blank"
                     title="Share on Facebook"
