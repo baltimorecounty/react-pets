@@ -9,6 +9,17 @@
       name="description"
       content="Web site created using create-react-app"
     />
+    <meta
+      property="og:url"
+      content="http://localhost:3000/#/pets/ACIMP-2018-00458"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Baltimore County Animal Services" />
+    <meta property="og:description" content="Pet Adoptions" />
+    <meta
+      property="og:image"
+      content="https://www.your-domain.com/path/image.jpg"
+    />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -33,6 +44,49 @@
           "If you're interested in adopting an animal, please have its Animal ID: {animalId} handy. Before calling or visiting our shelter, please review our page <a href='https://beta.baltimorecountymd.gov/departments/animalservices/how-to-adopt.html'>how to adopt</a>.",
         petStatus: "Adoptable",
       };
+    </script>
+    <script>
+      window.twttr = (function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0],
+          t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+        t._e = [];
+        t.ready = function (f) {
+          t._e.push(f);
+        };
+        return t;
+      })(document, "script", "twitter-wjs");
+      twttr.ready(function (twttr) {
+        // bind events here
+        var twitterHref = document
+          .getElementById("twitterButton")
+          .getAttribute("href");
+        document.getElementById("twitterButton").href =
+          twitterHref + "&url=" + window.location.href;
+        var facebookHref = document
+          .getElementById("facebookButton")
+          .getAttribute("href");
+        document.getElementById("facebookButton").href =
+          facebookHref + "?u=" + window.location.href;
+      });
+    </script>
+    <div id="fb-root"></div>
+    <script>
+      (function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src =
+          "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, "script", "facebook-jssdk");
     </script>
   </head>
   <body>

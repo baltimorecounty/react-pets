@@ -1,6 +1,7 @@
 import PetAttributeRows from "./PetAttributeRows";
 import PetThumbnail from "./PetThumbnail";
 import { FormatDate } from "../utilities/DateFunctions";
+import { SocialMediaButton } from "@baltimorecounty/dotgov-components";
 import React from "react";
 
 const PetDetail = (props) => {
@@ -14,8 +15,14 @@ const PetDetail = (props) => {
     gender,
     dateAdoptedRedeemed,
     petType,
+    showShareList = false,
   } = props;
 
+  const shareURL = window.location.href.replace("#", "%23");
+  const shareTwitterText = `https://twitter.com/intent/tweet?text=Please%20consider%20adopting%20${animalName}&url=${shareURL}`;
+  const shareFaceBookText = `https://www.facebook.com/sharer/sharer.php?u=${shareURL}`;
+
+  console.log(shareURL);
   return (
     <div className="container">
       <h2>{animalName}</h2>
@@ -41,6 +48,37 @@ const PetDetail = (props) => {
             dateAdoptedRedeemed={FormatDate(dateAdoptedRedeemed)}
             petType={petType}
           />
+        </div>
+      </div>
+      <div className="row">
+        <div className="col">
+          {showShareList ? (
+            <div className="dg_actions-list">
+              <ul>
+                <li>
+                  <SocialMediaButton
+                    id="twitterButton"
+                    className="dg_Button"
+                    title="Share on Twitter"
+                    href={shareTwitterText}
+                    icon="twitter"
+                    content="Twitter"
+                  />
+                </li>
+                <li>
+                  <SocialMediaButton
+                    id="facebookButton"
+                    href={shareFaceBookText}
+                    target="_blank"
+                    title="Share on Facebook"
+                    icon="facebook"
+                    className="dg_button"
+                    content="Facebook"
+                  />
+                </li>
+              </ul>
+            </div>
+          ) : null}
         </div>
       </div>
     </div>
