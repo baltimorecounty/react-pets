@@ -22,7 +22,6 @@ const PetDetail = (props) => {
   const shareTwitterText = `https://twitter.com/intent/tweet?text=Please%20consider%20adopting%20${animalName}&url=${shareURL}`;
   const shareFaceBookText = `https://www.facebook.com/sharer/sharer.php?u=${shareURL}`;
 
-  console.log(shareURL);
   return (
     <div className="container">
       <h2>{animalName}</h2>
