@@ -34,6 +34,52 @@
         petStatus: "Adoptable",
       };
     </script>
+    <!--********************************
+    The below scripts are needed to test the social media button functionality. Comment this back in if you need to test these locally
+    ***********************************-->
+    <!-- <script>
+      window.twttr = (function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0],
+          t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+        t._e = [];
+        t.ready = function (f) {
+          t._e.push(f);
+        };
+        return t;
+      })(document, "script", "twitter-wjs");
+      twttr.ready(function (twttr) {
+        // bind events here
+        var twitterHref = document
+          .getElementById("twitterButtonPets")
+          .getAttribute("href");
+        document.getElementById("twitterButton").href =
+          twitterHref + "&url=" + window.location.href;
+        var facebookHref = document
+          .getElementById("facebookButtonPets")
+          .getAttribute("href");
+        document.getElementById("facebookButton").href =
+          facebookHref + "?u=" + window.location.href;
+      });
+    </script>
+    <div id="fb-root"></div>
+    <script>
+      (function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src =
+          "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, "script", "facebook-jssdk");
+    </script> -->
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

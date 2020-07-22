@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import PetDetail from "../components/PetDetail";
 import PetSidebar from "../components/PetSidebar";
 import ReactHtmlParser from "react-html-parser";
+
 import usePet from "../hooks/usePet";
 
 const AdoptablePetsDetails = (props) => {
@@ -60,6 +61,7 @@ const AdoptablePetsDetails = (props) => {
                   animalId={animalId}
                   gender={gender}
                   dateAdoptedRedeemed={dateAdoptedRedeemed}
+                  showShareList={true}
                   petType={petType}
                 />
               </div>

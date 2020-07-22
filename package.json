@@ -1,9 +1,9 @@
 {
   "name": "react-pets",
-  "version": "0.1.0",
+  "version": "1.0.19",
   "private": true,
   "dependencies": {
-    "@baltimorecounty/dotgov-components": "^0.1.106",
+    "@baltimorecounty/dotgov-components": "1.0.19",
     "@baltimorecounty/javascript-utilities": "^1.0.7",
     "@baltimorecounty/react-filter-list": "^0.2.3",
     "@testing-library/jest-dom": "^4.2.4",
