@@ -14,6 +14,8 @@ const PetsList = ({ filters = [] }) => (
     filters={filters}
     apiEndpoint={`${getValue("apiRoot")}`}
     renderItem={(props) => <PetCard {...props} />}
+    includeInputFilter={true}
+    inputFilterPlaceholder="Begin typing to filter by title or summary..."
   />
 );
 
