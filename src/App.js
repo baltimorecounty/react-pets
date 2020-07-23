@@ -49,8 +49,9 @@ const filters = [
 
   {
     targetApiField: "recordsPerPage",
-    value: 1000,
+    value: 10,
   },
+
   {
     targetApiField: "petType",
     displayName: "Species",
