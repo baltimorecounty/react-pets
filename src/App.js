@@ -70,6 +70,15 @@ const filters = [
       { value: "unknown", label: "Unknown" },
     ],
   },
+  {
+    targetApiField: "weight",
+    displayName: "Size",
+    options: [
+      { value: "small", label: "Small" },
+      { value: "medium", label: "Medium" },
+      { value: "large", label: "Large" },
+    ],
+  },
 ];
 
 function App() {
