@@ -25,28 +25,27 @@ const PetAttributes = (props) => {
         displayAttributes.includes(attribute.label) && attribute.value
     )
     .map((item, index) => {
-      const { value: weight = "" } = attributes.find(
+      const { value: weightUnit = "" } = attributes.find(
         (x) => x.label === "Weight Unit"
       );
-      const { value: age = "" } = attributes.find(
+      const { value: ageUnit = "" } = attributes.find(
         (x) => x.label === "Age Unit"
       );
+
+      console.log(item.value);
+      console.log(weightUnit);
 
       return (
         <TableRow key={index}>
           <TableHeadCell>{ConvertToFriendlyNames(item.label)}</TableHeadCell>
-          {item.label === "Age" && age && (
+          {item.label === "Age" && ageUnit && (
             <TableCell>
-              <span>
-                {item.value} {age}
-              </span>
+              <span>{`${item.value} ${ageUnit}`}</span>
             </TableCell>
           )}
-          {item.label === "Weight" && weight && (
+          {item.label === "Weight" && weightUnit && (
             <TableCell>
-              <span>
-                {item.value} {weight}
-              </span>
+              <span>{`${item.value} ${weightUnit}`}</span>
             </TableCell>
           )}
           {item.label.indexOf("Weight") === -1 &&
