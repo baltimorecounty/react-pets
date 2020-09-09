@@ -32,9 +32,6 @@ const PetAttributes = (props) => {
         (x) => x.label === "Age Unit"
       );
 
-      console.log(item.value);
-      console.log(weightUnit);
-
       return (
         <TableRow key={index}>
           <TableHeadCell>{ConvertToFriendlyNames(item.label)}</TableHeadCell>
