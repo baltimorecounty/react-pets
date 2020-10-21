@@ -53,7 +53,7 @@ const filters = [
   },
   {
     targetApiField: "recordsPerPage",
-    value: 100,
+    value: 10,
   },
   {
     targetApiField: "petType",
