@@ -9,7 +9,7 @@ const adoptAblePetsSummaryItems = [
     id: 1,
     icon: "fas fa-map-marker-alt",
     heading: "Animal Services",
-    content: "<p> 13800 Manor Road <br /> Baldwin, Maryland 212013</p>",
+    content: "<p> 13800 Manor Road <br /> Baldwin, Maryland 21013</p>",
   },
 
   {
@@ -36,7 +36,7 @@ const adoptAblePetsSummaryItems = [
     id: 3,
     icon: "far fa-envelope",
     heading: "Email:",
-    content: "<p><a href=`#`>animalservices@baltimorecountymd.gov</a></p>",
+    content: "<p><a href=mailto:animalservices@baltimorecountymd.gov>animalservices@baltimorecountymd.gov</a></p>",
   },
   {
     id: 4,
@@ -55,7 +55,7 @@ const adoptAblePetsSummaryItems = [
     id: 6,
     icon: "fas fa-user",
     heading: "Chief:",
-    content: "<p>Kevin Usilton</p>",
+    content: "<p>Dr. Sandra Andrulis.</p>",
   },
 ];
 
