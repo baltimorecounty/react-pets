@@ -38,7 +38,7 @@ const configValues = {
 };
 
 setConfig(configValues);
-
+console.log(window.pets.workingCat)
 const filters = [
   {
     targetApiField: "status",
@@ -46,12 +46,15 @@ const filters = [
       window.pets.petStatus ||
       console.error("You must provide a pets.petStatus."),
   },
-
+  {
+    targetApiField: "workingcat",
+    value:
+      window.pets.workingCat,
+  },
   {
     targetApiField: "recordsPerPage",
-    value: 10,
+    value: 100,
   },
-
   {
     targetApiField: "petType",
     displayName: "Species",
