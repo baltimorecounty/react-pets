@@ -54,8 +54,8 @@ const adoptAblePetsSummaryItems = [
   {
     id: 6,
     icon: "fas fa-user",
-    heading: "Director:",
-    content: "<p>Dr. Gregory Branch.</p>",
+    heading: "Chief:",
+    content: "<p>Dr. Sandra Andrulis.</p>",
   },
 ];
 
