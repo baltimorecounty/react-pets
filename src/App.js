@@ -38,7 +38,7 @@ const configValues = {
 };
 
 setConfig(configValues);
-console.log(window.pets.workingCat)
+
 const filters = [
   {
     targetApiField: "status",
