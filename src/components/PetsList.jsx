@@ -15,7 +15,7 @@ console.log(petStatus);
 
 const PetsList = ({ filters = [] }) => (
   <div>
-    {workingCats ? (
+    {workingCats === "true" ? (
       <div>
         <h3>Information About Working Cat Adoption</h3>
         <p>

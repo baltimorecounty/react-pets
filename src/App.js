@@ -12,6 +12,7 @@ const { setConfig } = Config;
 
 const initialPetsEndpoint = "api/hub/pets/pets";
 const { workingCats } = window.pets;
+console.log(workingCats)
 const testApiRoot = `https://testservices.baltimorecountymd.gov/${initialPetsEndpoint}`;
 const prodApiRoot = `https://services.baltimorecountymd.gov/${initialPetsEndpoint}`;
 
@@ -48,7 +49,7 @@ function App() {
           path="/"
           component={(props) => (
             <PetsList
-              filters={workingCats ? filtersWorkingCats : filters}
+              filters={workingCats === 'true' ? filtersWorkingCats : filters}
               {...props}
             />
           )}

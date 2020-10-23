@@ -34,11 +34,6 @@ const filters = [
         console.error("You must provide a pets.petStatus."),
     },
     {
-      targetApiField: "workingcat",
-      value:
-        window.pets.workingCats,
-    },
-    {
       targetApiField: "recordsPerPage",
       value: 10,
     },
