@@ -8,25 +8,14 @@ const {
   pets: {
     petStatus = console.error("Please define a pet status") || "",
     workingCats,
+    informationAbout,
   } = {},
 } = window;
-
-console.log(petStatus);
 
 const PetsList = ({ filters = [] }) => (
   <div>
     {workingCats === "true" ? (
-      <div>
-        <h3>Information About Working Cat Adoption</h3>
-        <p>
-          Adopt one or several of our working cats shown below and help save
-          lives today! Learn more about our
-          <a href="https://www.baltimorecountymd.gov/departments/animalservices/working-cat-program.html">
-            Working Cat Program
-          </a>
-          .
-        </p>
-      </div>
+      <div dangerouslySetInnerHTML={{ __html: informationAbout }}></div>
     ) : null}
     <FilterList
       title={`${petStatus} Pets`}
