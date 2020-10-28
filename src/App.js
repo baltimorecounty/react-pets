@@ -12,7 +12,6 @@ const { setConfig } = Config;
 
 const initialPetsEndpoint = "api/hub/pets/pets";
 const { workingCats } = window.pets;
-console.log(workingCats)
 const testApiRoot = `https://testservices.baltimorecountymd.gov/${initialPetsEndpoint}`;
 const prodApiRoot = `https://services.baltimorecountymd.gov/${initialPetsEndpoint}`;
 
