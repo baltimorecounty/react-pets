@@ -42,6 +42,9 @@ const AdoptablePetsDetails = (props) => {
   var petsInformationAboutAdoption = ReactHtmlParser(
     window.pets.informationAbout.replace("{animalId}", animalId)
   );
+  var informationHeader = ReactHtmlParser(
+    window.pets.informationHeader
+  );
 
   return (
     <div className="dg_internal-template">
@@ -68,7 +71,7 @@ const AdoptablePetsDetails = (props) => {
             )}
             {petsInformationAboutAdoption ? (
               <div>
-                <h3>Information About Adoption</h3>
+                <h3>{informationHeader}</h3>
                 <p>{petsInformationAboutAdoption}</p>
               </div>
             ) : null}
