@@ -38,6 +38,11 @@ const filters = [
       value: 10,
     },
     {
+      targetApiField: "workingcat",
+      value:
+        window.pets.workingCats,
+    },
+    {
       targetApiField: "petType",
       displayName: "Species",
       options: [
