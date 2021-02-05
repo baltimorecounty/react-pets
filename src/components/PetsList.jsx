@@ -29,6 +29,7 @@ const PetsList = ({ filters = [] }) => (
       renderItem={(props) => <PetCard {...props} />}
       includeInputFilter={true}
       includeClearButton={true}
+      includeDateFilter={false}
       searchCategory="Pets"
       inputFilterPlaceholder="Begin typing to filter the results..."
     />
