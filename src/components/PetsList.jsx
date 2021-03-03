@@ -18,7 +18,7 @@ const PetsList = ({ filters = [] }) => (
   <div>
     {workingCats === "true" ? (
       <div>
-        <h3>{informationHeader}</h3>
+        <h3>{ReactHtmlParser(informationHeader)}</h3>
         <div>{ReactHtmlParser(informationAbout)}</div>
       </div>
     ) : null}
