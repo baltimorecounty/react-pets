@@ -3,7 +3,7 @@ import {
   CardContent,
   CardFooter,
 } from "@baltimorecounty/dotgov-components";
-
+import ReactHtmlParser from "react-html-parser";
 import { Link } from "react-router-dom";
 import PetAttributeRows from "./PetAttributeRows";
 import PetThumbnail from "./PetThumbnail";
@@ -23,7 +23,7 @@ const PetCard = (props) => {
 
   return (
     <Card className="text-left">
-      <h2>{animalName}</h2>
+      <h2>{ReactHtmlParser(animalName)}</h2>
       <CardContent>
         <div className="row">
           <div className="col-md-4 col-xs-12">

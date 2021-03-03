@@ -3,7 +3,7 @@ import React from "react";
 const PetThumbnail = ({ thumbnail, thumbnailAltText, animalName, gender }) =>
   thumbnail ? (
     <img
-      style={{ maxWidth: "100%" }}
+      className="dg_image"
       src={thumbnail}
       alt={
         thumbnailAltText
