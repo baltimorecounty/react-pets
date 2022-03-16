@@ -48,7 +48,7 @@ function App() {
           path="/"
           component={(props) => (
             <PetsList
-              filters={workingCats === 'true' ? filtersWorkingCats : filters}
+              filters={workingCats === "true" ? filtersWorkingCats : filters}
               {...props}
             />
           )}
