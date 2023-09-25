@@ -15,47 +15,61 @@ const adoptAblePetsSummaryItems = [
   {
     id: 2,
     icon: "far fa-clock",
-    heading: "Hours:",
-    content: "<p>Monday through Friday<br />8 a.m. to 4:30 p.m.</p>",
+    heading: "Office Hours:",
+    content: "<p>Monday to Friday<br />8 a.m. to 4 p.m.</p>",
   },
   {
     id: 21,
 
     heading: "Adoption Hours:",
     content:
-      "<p>Monday through Friday<br />Noon to 6 p.m.</p><p>Saturday and Sunday<br/> Noon to 5 p.m.</p>",
+    "<p>Tuesday to Sunday<br />Noon to 5 p.m.</p>",
   },
   {
     id: 22,
 
-    heading: "Redemption And Surrender Hours:",
+    heading: "Redemption Hours:",
     content:
-      "<p> By Appointment Only</p><p>Monday through Friday<br />8 a.m. to 6 p.m.</p><p>Saturday and Sunday<br/> 8 a.m. to 5 p.m.</p>",
+    "<p>Daily<br />9 a.m. to 4 p.m.</p>",
+  },
+  {
+    id: 23,
+
+    heading: "Owner Surrender Hours:",
+    content:
+      "<p>Tuesday to Sunday<br />9 a.m. to Noon</p>",
+  },
+  {
+    id: 24,
+
+    heading: "Stray Intake Hours:",
+    content:
+      "<p>Daily<br />9 a.m. to 4 p.m.</p>",
   },
   {
     id: 3,
     icon: "far fa-envelope",
     heading: "Email:",
-    content: "<p><a href=mailto:animalservices@baltimorecountymd.gov>animalservices@baltimorecountymd.gov</a></p>",
+    content: "<p><a href='mailto:animalservices@baltimorecountymd.gov'>animalservices<br>@baltimorecountymd.gov</a></p>",
   },
+  
   {
     id: 4,
     icon: "fas fa-mobile-alt",
     heading: "Phone:",
-    content: "<p>410-887-PAWS (phone)</p> <p>410-817-4257 (fax)</p>",
+    content: "<a href='tel:410-887-7297'>410-887-PAWS (7297)</a></p>",
+  },
+  {
+    id: 41,
+    icon: "fas fa-mobile-alt",
+    heading: "Fax:",
+    content: "<p>410-817-4257</p>",
   },
   {
     id: 5,
-    icon: "fas fa-exclamation-circle",
-    heading: "Baltcogo311:",
-    content:
-      "<p><a href='https://www.baltimorecountymd.gov/report-problem/'/>Report a problem</a></p>",
-  },
-  {
-    id: 6,
     icon: "fas fa-user",
-    heading: "Chief:",
-    content: "<p>Dr. Sandra Andrulis.</p>",
+    heading: "Division Chief:",
+    content: "<p>Carrie McCloskey</p>",
   },
 ];
 
